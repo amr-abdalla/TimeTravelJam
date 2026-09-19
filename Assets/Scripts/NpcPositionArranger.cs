@@ -1,21 +1,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteAlways]
 public class NpcPositionArranger : MonoBehaviour
 {
+	public static NpcPositionArranger Instance { get; private set; }
+
 	[SerializeField] private List<GameObject> npcs;
 	[SerializeField] private int centerIndex = 0;
 	[SerializeField] private float radius = 5f;
 	[SerializeField] private float rotationSpeed = 2f;
 
 	private float currentOffset;
-	private bool initialized;
+
+	private void Awake()
+	{
+		if (Instance != null)
+		{
+			Debug.LogWarning("Two instances of InputManager detected, destroying one");
+			Destroy(Instance);
+		}
+		Instance = this;
+	}
 
 	private void OnEnable()
 	{
 		currentOffset = TargetOffset();
-		initialized = true;
 		ArrangeInCircle();
 	}
 
@@ -23,23 +32,20 @@ public class NpcPositionArranger : MonoBehaviour
 	{
 		float target = TargetOffset();
 
-		// Snap in edit mode / on the first frame; lerp during play.
-		if (!initialized || !Application.isPlaying || rotationSpeed <= 0f)
+		// Frame-rate independent easing: same settle time at 30 or 300 fps.
+		float t = 1f - Mathf.Exp(-rotationSpeed * Time.deltaTime);
+		currentOffset = Mathf.LerpAngle(currentOffset, target, t);
+
+		if (Mathf.Abs(Mathf.DeltaAngle(currentOffset, target)) < 0.01f)
 		{
 			currentOffset = target;
-			initialized = true;
+			ArrangeInCircle();
 		}
-		else
+
+		if (currentOffset != target)
 		{
-			// Frame-rate independent easing: same settle time at 30 or 300 fps.
-			float t = 1f - Mathf.Exp(-rotationSpeed * Time.deltaTime);
-			currentOffset = Mathf.LerpAngle(currentOffset, target, t);
-
-			if (Mathf.Abs(Mathf.DeltaAngle(currentOffset, target)) < 0.01f)
-				currentOffset = target;
+			ArrangeInCircle();
 		}
-
-		ArrangeInCircle();
 	}
 
 	private float TargetOffset()
@@ -48,8 +54,10 @@ public class NpcPositionArranger : MonoBehaviour
 			return 0f;
 
 		int center = Mathf.Clamp(centerIndex, 0, npcs.Count - 1);
-		return - center * 360f / npcs.Count;
+		return -center * 360f / npcs.Count;
 	}
+
+	public GameObject GetCenteredNPC() => npcs[centerIndex];
 
 	public void ArrangeInCircle()
 	{
@@ -74,14 +82,36 @@ public class NpcPositionArranger : MonoBehaviour
 
 	public void SetCenterIndex(int index)
 	{
-		if (npcs == null || index < 0 || index > npcs.Count - 1)
+		if (npcs == null || npcs.Count <= 0)
 			return;
 
+		GetCenteredNPC().GetComponent<Interactable>().InteractionEnabled = true;
+
+		if (index < 0)
+		{
+			index = npcs.Count - 1;
+		}
+		else
+		{
+			index = index % npcs.Count;
+		}
+
 		centerIndex = index;
+		GetCenteredNPC().GetComponent<Interactable>().InteractionEnabled = false;
+		GetCenteredNPC().GetComponent<Outline>().enabled = false;
 	}
 
-	public void Next() => SetCenterIndex(centerIndex + 1);
-	public void Previous() => SetCenterIndex(centerIndex - 1);
+	public void SelectSpecific(GameObject gameObject)
+	{
+		for (int i = 0; i < npcs.Count; i++)
+		{
+			if (npcs[i] == gameObject)
+			{
+				SetCenterIndex(i);
+				return;
+			}
+		}
+	}
 
 	private void OnDrawGizmosSelected()
 	{
