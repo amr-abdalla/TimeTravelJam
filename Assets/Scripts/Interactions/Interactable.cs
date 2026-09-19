@@ -21,7 +21,7 @@ public class Interactable : MonoBehaviour
 		_outline.enabled = false;
 	}
 
-	public void Interaction()
+	public virtual void Interaction()
 	{
 		_interactionEvent.Invoke();
 		Debug.Log("Interaction", this.gameObject);
