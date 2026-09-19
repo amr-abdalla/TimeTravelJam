@@ -27,7 +27,7 @@ public class Interactable : MonoBehaviour
 		Debug.Log("Interaction", this.gameObject);
 	}
 
-	public void MouseHoverCallback()
+	public virtual void MouseHoverCallback()
 	{
 		if (!InteractionEnabled)
 			return;
@@ -37,7 +37,7 @@ public class Interactable : MonoBehaviour
 		_mouseHoverEvent.Invoke();
 	}
 
-	public void MouseExitCallback()
+	public virtual void MouseExitCallback()
 	{
 		if (!InteractionEnabled)
 			return;
