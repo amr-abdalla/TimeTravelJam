@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class NpcPositionArranger : MonoBehaviour
+public class NpcPositionManager : MonoBehaviour
 {
-	public static NpcPositionArranger Instance { get; private set; }
+	public static NpcPositionManager Instance { get; private set; }
 
 	[SerializeField] private List<GameObject> npcs;
-	[SerializeField] private int centerIndex = 0;
+	[SerializeField] private int selectedIndex = 0;
 	[SerializeField] private float radius = 5f;
 	[SerializeField] private float rotationSpeed = 2f;
 
@@ -53,11 +54,11 @@ public class NpcPositionArranger : MonoBehaviour
 		if (npcs == null || npcs.Count == 0)
 			return 0f;
 
-		int center = Mathf.Clamp(centerIndex, 0, npcs.Count - 1);
+		int center = Mathf.Clamp(selectedIndex, 0, npcs.Count - 1);
 		return -center * 360f / npcs.Count;
 	}
 
-	public GameObject GetCenteredNPC() => npcs[centerIndex];
+	public GameObject GetSelectedNPC() => npcs[selectedIndex];
 
 	public void ArrangeInCircle()
 	{
@@ -85,7 +86,8 @@ public class NpcPositionArranger : MonoBehaviour
 		if (npcs == null || npcs.Count <= 0)
 			return;
 
-		GetCenteredNPC().GetComponent<Interactable>().InteractionEnabled = true;
+		GetSelectedNPC().GetComponent<Interactable>().InteractionEnabled = true;
+		GetSelectedNPC().transform.rotation = Quaternion.Euler(0, 90, 0);
 
 		if (index < 0)
 		{
@@ -96,22 +98,31 @@ public class NpcPositionArranger : MonoBehaviour
 			index = index % npcs.Count;
 		}
 
-		centerIndex = index;
-		GetCenteredNPC().GetComponent<Interactable>().InteractionEnabled = false;
-		GetCenteredNPC().GetComponent<Outline>().enabled = false;
+		selectedIndex = index;
+		GetSelectedNPC().GetComponent<Interactable>().InteractionEnabled = false;
+		GetSelectedNPC().GetComponent<Outline>().enabled = false;
 	}
 
-	public void SelectSpecific(GameObject gameObject)
+	public void SelectNPC(GameObject npc)
 	{
 		for (int i = 0; i < npcs.Count; i++)
 		{
-			if (npcs[i] == gameObject)
+			if (npcs[i] == npc)
 			{
 				SetCenterIndex(i);
 				return;
 			}
 		}
 	}
+
+	public void RemoveAndDestroyCurrent(InputAction.CallbackContext _)
+	{
+		GameObject selected = GetSelectedNPC();
+		RemoveNPC(selected);
+		Destroy(selected);
+	}
+
+	public void RemoveNPC(GameObject npc) => npcs.Remove(npc);
 
 	private void OnDrawGizmosSelected()
 	{

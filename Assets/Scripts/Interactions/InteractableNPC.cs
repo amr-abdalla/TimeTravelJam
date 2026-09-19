@@ -2,7 +2,7 @@ public class InteractableNPC : Interactable
 {
 	public override void Interaction()
 	{
-		NpcPositionArranger.Instance.SelectSpecific(gameObject);
+		NpcPositionManager.Instance.SelectNPC(gameObject);
 		base.Interaction();
 	}
 }
