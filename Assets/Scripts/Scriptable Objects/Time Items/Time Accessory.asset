@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90f0d9daa503ba74eb03c8f2eeedb9ff, type: 3}
-  m_Name: Test_Cube
+  m_Script: {fileID: 11500000, guid: cd066432f89ea604997ff13726106890, type: 3}
+  m_Name: Time Accessory
   m_EditorClassIdentifier: 
-  _itemName: Le cube
-  _period: 2
-  _itemValue: 200
+  _itemName: 
+  _period: 0
+  _itemValue: 0
   _inStoragePrefab: {fileID: 0}
-  _items: []
+  _defaultDescription: Use this item on a traveler going on the right time period
+  _periodsDescriptions: []
+  _accessoryName: phone
