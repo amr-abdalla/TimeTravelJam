@@ -21,13 +21,13 @@ public class Interactable : MonoBehaviour
 		_outline.enabled = false;
 	}
 
-	public void Interaction()
+	public virtual void Interaction()
 	{
 		_interactionEvent.Invoke();
 		Debug.Log("Interaction", this.gameObject);
 	}
 
-	public void MouseHoverCallback()
+	public virtual void MouseHoverCallback()
 	{
 		if (!InteractionEnabled)
 			return;
@@ -37,7 +37,7 @@ public class Interactable : MonoBehaviour
 		_mouseHoverEvent.Invoke();
 	}
 
-	public void MouseExitCallback()
+	public virtual void MouseExitCallback()
 	{
 		if (!InteractionEnabled)
 			return;
