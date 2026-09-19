@@ -6,8 +6,8 @@ using UnityEngine;
 /// </summary>
 public enum TimePeriod
 {
-	Prehistory,
-	Antiquity,
-	MiddleAge,
-	Industrial
+	Prehistory = 0,
+	Antiquity = 1,
+	MiddleAge = 2,
+	Industrial = 3,
 }

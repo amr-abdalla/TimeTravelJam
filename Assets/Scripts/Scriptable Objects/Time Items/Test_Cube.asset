@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemName: Le cube
   _type: 0
-  _period: 3
+  _period: 2
   _itemValue: 200
   _onCharacterPrefab: {fileID: 0}
   _inStoragePrefab: {fileID: 0}

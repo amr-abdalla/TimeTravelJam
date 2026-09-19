@@ -13,8 +13,8 @@ public class TimeItem : ScriptableObject
         [SerializeField] private string _itemName; //if we need something different than ScriptableObject.name
     public enum ItemType
     {
-        Wearable,
-        Accessory
+        Wearable = 0,
+        Accessory = 1
     }
     [Tooltip("Type of the object, Wearable automatically goes on the body, accessories must be placed on all prefabs first")]
         [SerializeField] private ItemType _type;
