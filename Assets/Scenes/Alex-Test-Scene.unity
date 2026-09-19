@@ -499,6 +499,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionEnabled: 1
+  _interactionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _mouseHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _mouseExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1229176875
 MonoBehaviour:
   m_ObjectHideFlags: 0
