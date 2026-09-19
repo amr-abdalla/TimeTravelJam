@@ -23,7 +23,8 @@ MonoBehaviour:
   - period: 1
     description: 
   - period: 2
-    description: 
+    description: This shield was used by <b>medieval</b> knights to protect themselves
+      from opponents strikes.
   - period: 3
     description: 
   _accessoryName: 

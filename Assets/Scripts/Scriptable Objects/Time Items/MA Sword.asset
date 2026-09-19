@@ -22,7 +22,8 @@ MonoBehaviour:
     description: After a time paradoxe, this sword now help <b>prehistoric</b> tribes
       to exterminate mammoths.
   - period: 1
-    description: 
+    description: After a time paradoxe, this sword is said to be forged by <b>Antiquity</b>'s
+      divinities.
   - period: 2
     description: This sword was wielded by knights during tournament in the <b>Middle
       Ages</b>.
