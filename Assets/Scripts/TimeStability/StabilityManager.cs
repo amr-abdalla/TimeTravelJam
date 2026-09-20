@@ -100,7 +100,13 @@ public class StabilityManager : MonoBehaviour
 		}
 	}
 
-	public void AddAnomaly(TimeItem item, TimePeriod period) => _timeAnomalies.Add(item, period);
+	public void AddAnomaly(TimeItem item, TimePeriod period)
+	{
+		if (!_timeAnomalies.ContainsKey(item))
+			_timeAnomalies.Add(item, period);
+		else
+			_timeAnomalies[item] = period;
+	}
 
 	public void CheckForAnomaly()
 	{
