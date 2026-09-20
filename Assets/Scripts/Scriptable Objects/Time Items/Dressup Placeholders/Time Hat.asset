@@ -9,12 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90f0d9daa503ba74eb03c8f2eeedb9ff, type: 3}
-  m_Name: Test_Cube
+  m_Script: {fileID: 11500000, guid: 0d0c520d199a22744b6be072b08aa160, type: 3}
+  m_Name: Time Hat
   m_EditorClassIdentifier: 
-  _itemName: Le cube
-  _period: 2
-  _itemValue: 200
+  _itemName: 
+  _period: 0
+  _itemValue: 0
   _inStoragePrefab: {fileID: 3683735611212767735, guid: 07643c88b22490841b98d5e06181e3b2, type: 3}
   _defaultDescription: Use this item on a traveler going on the right time period
-  _periodsDescriptions: []
+  _periodsDescriptions:
+  - period: 0
+    description: 
+  _onCharacterPrefab: {fileID: 4417796877937087616, guid: 556b7a0e6edf7b847b293a95f2ff6144, type: 3}

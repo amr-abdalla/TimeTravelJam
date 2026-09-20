@@ -9,12 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90f0d9daa503ba74eb03c8f2eeedb9ff, type: 3}
-  m_Name: Test_Cube
+  m_Script: {fileID: 11500000, guid: cd066432f89ea604997ff13726106890, type: 3}
+  m_Name: Sword
   m_EditorClassIdentifier: 
-  _itemName: Le cube
-  _period: 2
-  _itemValue: 200
-  _inStoragePrefab: {fileID: 3683735611212767735, guid: 07643c88b22490841b98d5e06181e3b2, type: 3}
+  _itemName: 
+  _period: 0
+  _itemValue: 0
+  _cannotGoInStorage: 0
+  _inStoragePrefab: {fileID: 665288137413522183, guid: 12bd085a2fb9ce341a2afb4d6f76e368, type: 3}
   _defaultDescription: Use this item on a traveler going on the right time period
   _periodsDescriptions: []
+  _accessoryName: sword

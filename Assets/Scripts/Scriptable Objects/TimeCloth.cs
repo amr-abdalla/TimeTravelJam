@@ -4,9 +4,10 @@ using UnityEngine;
 public class TimeCloth : TimeItem
 {
     public ClothType Type { get { return _clothType; } }
-    public Material ClothMaterial { get { return _clothMaterial; } }
+    public Material ClothMaterial_M { get { return _clothMaterial_M; } }
+    public Material ClothMaterial_F { get { return _clothMaterial_F; } }
 
-    public enum ClothType
+	public enum ClothType
     {
         Shirt = 0,
         Pants = 1
@@ -16,5 +17,8 @@ public class TimeCloth : TimeItem
         [SerializeField] private ClothType _clothType;
 
     [Tooltip("Material associated to the cloth")]
-        [SerializeField] private Material _clothMaterial;
+        [SerializeField] private Material _clothMaterial_M;
+
+	[Tooltip("Material associated to the cloth")]
+	    [SerializeField] private Material _clothMaterial_F;
 }
