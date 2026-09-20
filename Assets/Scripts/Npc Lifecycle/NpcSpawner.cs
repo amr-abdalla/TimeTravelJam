@@ -26,6 +26,8 @@ public class NpcSpawner : MonoBehaviour
 	{
 		GameObject npc = Instantiate(NpcPrefab, null);
 		// some cool vfx here
+		AudioManager.Instance.Play("time-travel");
+		//AudioManager.Instance.Play("lalala");
 		//npc.SetActive(false);
 
 		npc.GetComponent<NpcData>().Randomize();
