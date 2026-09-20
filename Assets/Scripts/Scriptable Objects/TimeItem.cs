@@ -4,7 +4,7 @@ public class TimeItem : ScriptableObject
 {
     public string ItemName { get { return _itemName; } }
     public TimePeriod Period { get { return _period; } }
-    public GameObject InStoragePregab { get { return _inStoragePrefab; } }
+    public GameObject InStoragePrefab { get { return _inStoragePrefab; } }
 
     [Tooltip("Display name of the item if needed")]
     [SerializeField] protected string _itemName; //if we need something different than ScriptableObject.name

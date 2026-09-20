@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9107390006455352487}
   - component: {fileID: 6568086041248864073}
   - component: {fileID: 8053184063354270439}
-  - component: {fileID: 27959853607057228}
+  - component: {fileID: 3154018808251510779}
   m_Layer: 0
   m_Name: Red_Sphere
   m_TagString: Interactable
@@ -128,7 +128,7 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &27959853607057228
+--- !u!114 &3154018808251510779
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,28 +137,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 4769270232236868190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4e61b027bc0dd344ab2f39198b27183, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f85a5cf13988ca46a4a54c880328444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionEnabled: 1
   _interactionEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DressUpCharacter, Assembly-CSharp
-        m_MethodName: WearItem
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 7b9e5799158fcfd43b460fc8824fcf1a, type: 2}
-          m_ObjectArgumentAssemblyTypeName: TimeItem, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _mouseHoverEvent:
     m_PersistentCalls:
       m_Calls: []
   _mouseExitEvent:
     m_PersistentCalls:
       m_Calls: []
+  _associatedItem: {fileID: 11400000, guid: 7b9e5799158fcfd43b460fc8824fcf1a, type: 2}
+  CurrentStorageIndex: 0

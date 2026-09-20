@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7622142696801460213}
   - component: {fileID: 1373422520772016411}
   - component: {fileID: 6225320091219129709}
-  - component: {fileID: 2509788958937022818}
+  - component: {fileID: 5967244467208820020}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Interactable
@@ -128,7 +128,7 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &2509788958937022818
+--- !u!114 &5967244467208820020
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,28 +137,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 3683735611212767735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4e61b027bc0dd344ab2f39198b27183, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f85a5cf13988ca46a4a54c880328444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   InteractionEnabled: 1
   _interactionEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DressUpCharacter, Assembly-CSharp
-        m_MethodName: Wear
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 9f2bd4f2ffd04484ebba6d432da84e02, type: 2}
-          m_ObjectArgumentAssemblyTypeName: TimeItem, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _mouseHoverEvent:
     m_PersistentCalls:
       m_Calls: []
   _mouseExitEvent:
     m_PersistentCalls:
       m_Calls: []
+  _associatedItem: {fileID: 11400000, guid: 9481f435f5a81ae4b805259d8a19c684, type: 2}
+  CurrentStorageIndex: 0
