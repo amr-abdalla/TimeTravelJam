@@ -10,8 +10,10 @@ public class DressUpCharacter : MonoBehaviour
 	private TimeCloth _npcCloth;
 	private GameObject _hatObject;
 	private StorageManager _storage;
+	private StabilityManager _stability;
 
 	private AccessoryInteractable[] _accessories;
+
 
 	enum Gender
 	{
@@ -30,6 +32,9 @@ public class DressUpCharacter : MonoBehaviour
 
 		_storage = StorageManager.Instance;
 		if(_storage == null) _storage = FindFirstObjectByType<StorageManager>();
+
+		_stability = StabilityManager.Instance;
+		if (_stability == null) _stability = FindFirstObjectByType<StabilityManager>();
 
 		_accessories = GetComponentsInChildren<AccessoryInteractable>(true);
 
@@ -118,15 +123,31 @@ public class DressUpCharacter : MonoBehaviour
 	{
 		int score = adjustements.BaseCharacterScore;
 
-		if(_npcHat != null)
-			score += (int) (_npcHat.ItemValue * (_npcHat.Period == period ? adjustements.GoodItemMultiplier : adjustements.BadItemMultiplier * -1f));
+		if (_stability == null) _stability = FindFirstObjectByType<StabilityManager>();
+
+		TimePeriod itemPeriod = period;
+
+		if (_npcHat != null)
+		{
+			itemPeriod = _stability.HasAnomaly(_npcHat) ? _stability.GetAnomaly(_npcHat) : _npcHat.Period;
+			score += (int)(_npcHat.ItemValue * (itemPeriod == period ? adjustements.GoodItemMultiplier : adjustements.BadItemMultiplier * -1f));
+		}
 		if (_npcCloth != null)
-			score += (int)(_npcCloth.ItemValue * (_npcCloth.Period == period ? adjustements.GoodItemMultiplier : adjustements.BadItemMultiplier * -1f));
+		{
+			itemPeriod = _stability.HasAnomaly(_npcCloth) ? _stability.GetAnomaly(_npcCloth) : _npcCloth.Period;
+			score += (int)(_npcCloth.ItemValue * (itemPeriod == period ? adjustements.GoodItemMultiplier : adjustements.BadItemMultiplier * -1f));
+		}
 
 		foreach (AccessoryInteractable accessory in _accessories)
+		{
 			if (accessory.gameObject.activeSelf)
-				score += (int)(accessory.AssociatedItem.ItemValue * (accessory.AssociatedItem.Period == period && !accessory.AssociatedItem.CannotGoInStorage ? 
+			{
+				itemPeriod = _stability.HasAnomaly(accessory.AssociatedItem) ? _stability.GetAnomaly(accessory.AssociatedItem) : accessory.AssociatedItem.Period;
+
+				score += (int)(accessory.AssociatedItem.ItemValue * (accessory.AssociatedItem.Period == period && !accessory.AssociatedItem.CannotGoInStorage ?
 					adjustements.GoodItemMultiplier : adjustements.BadItemMultiplier * -1f));
+			}
+		}
 
 		return score;
 	}
