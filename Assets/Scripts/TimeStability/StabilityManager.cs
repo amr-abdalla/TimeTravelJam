@@ -19,8 +19,11 @@ public class StabilityManager : MonoBehaviour
 		{
 			_currentStability = value;
 			_stabilityBar.Value = (float) (_currentStability);
-			if(_currentStability <= 0)
+			if (_currentStability <= 0)
+			{
+				Debug.Log("Game Over");
 				_gameOverEvent.Invoke();
+			}
 		}
 	}
 	[SerializeField] private int _currentStability;
@@ -51,7 +54,7 @@ public class StabilityManager : MonoBehaviour
 		_stabilityBar.InitializeBar((float) _adjustements.MaxStability, (float)_currentStability);
 
 		StartCoroutine(stabilityCoroutine());
-		StartCoroutine(testSomeoneThroughTime());
+		//StartCoroutine(testSomeoneThroughTime());
 	}
 
 	public bool HasAnomaly(TimeItem item) => _timeAnomalies.ContainsKey(item);
@@ -97,6 +100,8 @@ public class StabilityManager : MonoBehaviour
 		}
 	}
 
+	public void AddAnomaly(TimeItem item, TimePeriod period) => _timeAnomalies.Add(item, period);
+
 	public void CheckForAnomaly()
 	{
 		float thresholdValue = ((_adjustements.ThresholdForRandom * _adjustements.MaxStability) / 100f);
@@ -111,8 +116,16 @@ public class StabilityManager : MonoBehaviour
 		if(dice > CurrentStability)
 		{
 			Debug.Log("ANOMALY");
+
 			//Get Random Item
-			//Add Anomalu
+
+			TimeItem randomItem = null;
+			TimePeriod randomPeriod = randomItem.Period;
+			do
+				randomPeriod = (TimePeriod)Random.Range(0, 4);
+			while (randomPeriod != randomItem.Period);
+
+			AddAnomaly(randomItem, randomPeriod);
 		}
 	}
 }
