@@ -105,7 +105,7 @@ public class NpcPositionManager : MonoBehaviour
 	private void OnDeselectNPC(GameObject npc)
 	{
 		npc.GetComponent<Interactable>().InteractionEnabled = true;
-		npc.transform.rotation = Quaternion.Euler(0, 90f, 0);
+		npc.transform.rotation = Quaternion.Euler(0, 0, 0);
 		npc.GetComponent<InteractableNPC>().InteractionEnabled = true;
 		npc.GetComponent<Collider>().enabled = true;
 

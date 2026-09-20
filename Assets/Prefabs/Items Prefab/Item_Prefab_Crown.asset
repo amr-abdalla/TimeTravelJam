@@ -28,4 +28,4 @@ MonoBehaviour:
     description: After a time paradox, this crown is now commonly worn by <b>knights</b>.
   - period: 3
     description: 'This crown is a symbol of authority worn by every medieval <b>sovereign</b>. '
-  _onCharacterPrefab: {fileID: 0}
+  _onCharacterPrefab: {fileID: 7052983532235538585, guid: 17d55000137552a4199837b4b8634dc4, type: 3}

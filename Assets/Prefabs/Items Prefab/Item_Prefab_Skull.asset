@@ -27,4 +27,4 @@ MonoBehaviour:
     description: After a time paradox, this skull is now commonly worn by <b>knights</b>.
   - period: 3
     description: After a time paradox, this skull is now commonly worn by <b>nobles</b>.
-  _onCharacterPrefab: {fileID: 0}
+  _onCharacterPrefab: {fileID: 1089837220261339471, guid: d5bf6bc99f0cfcf42b0dac2ccf7c1353, type: 3}
