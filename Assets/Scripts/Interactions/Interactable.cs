@@ -25,6 +25,7 @@ public class Interactable : MonoBehaviour
 	public virtual void Interaction()
 	{
 		_interactionEvent.Invoke();
+		AudioManager.Instance.Play("click");
 		Debug.Log("Interaction", this.gameObject);
 	}
 
@@ -32,6 +33,10 @@ public class Interactable : MonoBehaviour
 	{
 		if (!InteractionEnabled)
 			return;
+
+		if(gameObject.activeSelf)
+			AudioManager.Instance.Play("hover");
+
 
 		_outline.enabled = true;
 
@@ -42,6 +47,9 @@ public class Interactable : MonoBehaviour
 	{
 		if (!InteractionEnabled)
 			return;
+
+		if (gameObject.activeSelf)
+			AudioManager.Instance.Play("hover");
 
 		_outline.enabled = false;
 
