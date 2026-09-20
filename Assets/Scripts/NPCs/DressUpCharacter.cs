@@ -113,4 +113,21 @@ public class DressUpCharacter : MonoBehaviour
 		_clothRenderer.gameObject.SetActive(false);
 		_npcCloth = null;
 	}
+
+	public int CalculateOutfitScore(TimePeriod period, GameplayAdjustements adjustements)
+	{
+		int score = adjustements.BaseCharacterScore;
+
+		if(_npcHat != null)
+			score += (int) (_npcHat.ItemValue * (_npcHat.Period == period ? adjustements.GoodItemMultiplier : adjustements.BadItemMultiplier * -1f));
+		if (_npcCloth != null)
+			score += (int)(_npcCloth.ItemValue * (_npcCloth.Period == period ? adjustements.GoodItemMultiplier : adjustements.BadItemMultiplier * -1f));
+
+		foreach (AccessoryInteractable accessory in _accessories)
+			if (accessory.gameObject.activeSelf)
+				score += (int)(accessory.AssociatedItem.ItemValue * (accessory.AssociatedItem.Period == period && !accessory.AssociatedItem.CannotGoInStorage ? 
+					adjustements.GoodItemMultiplier : adjustements.BadItemMultiplier * -1f));
+
+		return score;
+	}
 }

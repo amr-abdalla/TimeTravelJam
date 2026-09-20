@@ -9,5 +9,5 @@ public enum TimePeriod
 	Prehistory = 0,
 	Antiquity = 1,
 	MiddleAge = 2,
-	Industrial = 3,
+	Nobility = 3,
 }

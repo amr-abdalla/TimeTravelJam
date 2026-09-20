@@ -10,6 +10,10 @@ public class AccessoryInteractable : Interactable
 	private void Start()
 	{
 		_storage = StorageManager.Instance;
+		/*
+		if(_associatedItem.CannotGoInStorage)
+			_outline.OutlineColor = Color.red;
+		*/
 	}
 
 	public override void Interaction()

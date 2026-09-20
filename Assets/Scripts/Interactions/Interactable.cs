@@ -10,7 +10,7 @@ public class Interactable : MonoBehaviour
 	[SerializeField] private UnityEvent _mouseHoverEvent;
 	[SerializeField] private UnityEvent _mouseExitEvent;
 
-	private Outline _outline;
+	protected Outline _outline;
 
 	protected void Awake()
 	{

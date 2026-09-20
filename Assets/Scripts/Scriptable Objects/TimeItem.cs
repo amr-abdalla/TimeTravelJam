@@ -4,6 +4,7 @@ public class TimeItem : ScriptableObject
 {
     public string ItemName { get { return _itemName; } }
     public TimePeriod Period { get { return _period; } }
+    public int ItemValue { get { return _itemValue; } }
     public bool CannotGoInStorage { get { return _cannotGoInStorage; } }
     public GameObject InStoragePrefab { get { return _inStoragePrefab; } }
 
