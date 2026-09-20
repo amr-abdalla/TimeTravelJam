@@ -32,5 +32,5 @@ MonoBehaviour:
     description: After a time paradox, this armour is now worn during <b>aristocratic</b>
       ball to aura farm.
   _clothType: 0
-  _clothMaterial_M: {fileID: 0}
+  _clothMaterial_M: {fileID: 2100000, guid: 06256dedfd5dcfa4ab96c15acfea56b0, type: 2}
   _clothMaterial_F: {fileID: 2100000, guid: 22f4e0affbe18d74c921048d2af3b4d8, type: 2}

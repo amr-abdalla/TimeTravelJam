@@ -29,5 +29,5 @@ MonoBehaviour:
   - period: 3
     description: After a time paradox, this toga is now commonly worn by <b>nobles</b>.
   _clothType: 0
-  _clothMaterial_M: {fileID: 2100000, guid: d7c5381500993ac40bb14f2fa36b4430, type: 2}
+  _clothMaterial_M: {fileID: 2100000, guid: 67118379576775940a9c265ef1068d63, type: 2}
   _clothMaterial_F: {fileID: 2100000, guid: d7c5381500993ac40bb14f2fa36b4430, type: 2}
