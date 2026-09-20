@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Outline))]
+[RequireComponent(typeof(Collider))]
 public class Interactable : MonoBehaviour
 {
 	public bool InteractionEnabled = true;
