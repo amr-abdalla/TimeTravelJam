@@ -21,5 +21,21 @@ public class NpcSpawner : MonoBehaviour
 		return Spawn();
 	}
 
-	public GameObject Spawn() => Instantiate(NpcPrefab, null);
+	public GameObject Spawn()
+	{
+		return Instantiate(NpcPrefab, null);
+
+		// some cool vfx here
+		// instantiate
+		// wear random items
+
+		/*
+		Interactable[] interactables = npc.GetComponentsInChildren<Interactable>().Where(c => c.gameObject != npc.gameObject).ToArray();
+		foreach(Interactable interactable in interactables)
+		{
+			interactable.InteractionEnabled = false;
+		}
+
+		 */
+	}
 }

@@ -71,6 +71,11 @@ public class InteractionManager : MonoBehaviour
 
 				if (interact != _currentInteractable && interact.enabled)
 				{
+					if (_currentInteractable != null)
+					{
+						cleanCurrentInteract();
+					}
+
 					_currentInteractable = interact;
 					_currentInteractable.MouseHoverCallback();
 				}

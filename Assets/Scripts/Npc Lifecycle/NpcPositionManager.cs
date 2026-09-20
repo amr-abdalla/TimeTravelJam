@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Linq;
 
 public class NpcPositionManager : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class NpcPositionManager : MonoBehaviour
 
 	private void OnEnable()
 	{
+		SetCenterIndex(0);
 		currentOffset = TargetOffset();
 		ArrangeInCircle();
 		remove.Enable();
@@ -85,8 +87,7 @@ public class NpcPositionManager : MonoBehaviour
 		if (npcs == null || npcs.Count <= 0)
 			return;
 
-		GetSelectedNPC().GetComponent<Interactable>().InteractionEnabled = true;
-		GetSelectedNPC().transform.rotation = Quaternion.Euler(0, 90, 0);
+		OnDeselectNPC(GetSelectedNPC());
 
 		if (index < 0)
 		{
@@ -98,8 +99,35 @@ public class NpcPositionManager : MonoBehaviour
 		}
 
 		selectedIndex = index;
-		GetSelectedNPC().GetComponent<Interactable>().InteractionEnabled = false;
-		GetSelectedNPC().GetComponent<Outline>().enabled = false;
+		OnSelectNPC(GetSelectedNPC());
+	}
+
+	private void OnDeselectNPC(GameObject npc)
+	{
+		npc.GetComponent<Interactable>().InteractionEnabled = true;
+		npc.transform.rotation = Quaternion.Euler(0, 90f, 0);
+		npc.GetComponent<InteractableNPC>().InteractionEnabled = true;
+		npc.GetComponent<Collider>().enabled = true;
+
+		Interactable[] interactables = npc.GetComponentsInChildren<Interactable>().Where(c => c.gameObject != npc.gameObject).ToArray();
+		foreach(Interactable interactable in interactables)
+		{
+			interactable.InteractionEnabled = false;
+		}
+	}
+
+	private void OnSelectNPC(GameObject npc)
+	{
+		npc.GetComponent<Interactable>().InteractionEnabled = false;
+		npc.GetComponent<Outline>().enabled = false;
+		npc.GetComponent<InteractableNPC>().InteractionEnabled = false;
+		npc.GetComponent<Collider>().enabled = false;
+
+		Interactable[] interactables = npc.GetComponentsInChildren<Interactable>().Where(c => c.gameObject != npc.gameObject).ToArray();
+		foreach (Interactable interactable in interactables)
+		{
+			interactable.InteractionEnabled = true;
+		}
 	}
 
 	public void SelectNPC(GameObject npc)
