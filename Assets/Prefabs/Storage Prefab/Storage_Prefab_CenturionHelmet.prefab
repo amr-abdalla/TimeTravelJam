@@ -11,9 +11,6 @@ GameObject:
   - component: {fileID: 6849608583094005959}
   - component: {fileID: 8608380823282880578}
   - component: {fileID: 5601947003993621158}
-  - component: {fileID: 7550249655134707924}
-  - component: {fileID: 5672922949536342430}
-  - component: {fileID: 7698377620999482214}
   m_Layer: 0
   m_Name: Storage_Prefab_CenturionHelmet
   m_TagString: Interactable
@@ -30,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 4738742065863303801}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000058114523}
-  m_LocalPosition: {x: 0, y: 0.172, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalPosition: {x: -0, y: 0.15, z: -0.017}
+  m_LocalScale: {x: 0.630675, y: 0.630675, z: 0.630675}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8643758488392242263}
@@ -89,69 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7550249655134707924
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4738742065863303801}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.28670576, y: 0.5384994, z: 0.5339273}
-  m_Center: {x: 0, y: 0.0025362372, z: -0.04529023}
---- !u!114 &5672922949536342430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4738742065863303801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
---- !u!114 &7698377620999482214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4738742065863303801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f85a5cf13988ca46a4a54c880328444, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractionEnabled: 1
-  _interactionEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _mouseHoverEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _mouseExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _associatedItem: {fileID: 11400000, guid: 1b7388d571bfece43aab313f6af5dc26, type: 2}
-  CurrentStorageIndex: 0
 --- !u!1 &9193598794607480500
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,6 +95,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8643758488392242263}
+  - component: {fileID: 1500551341441877810}
+  - component: {fileID: 6204480769906176638}
+  - component: {fileID: 4530858781275477726}
   m_Layer: 0
   m_Name: Storage_Prefab_CenturionHelmet
   m_TagString: Interactable
@@ -184,3 +121,66 @@ Transform:
   - {fileID: 6849608583094005959}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1500551341441877810
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9193598794607480500}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.23748527, y: 0.36354312, z: 0.3418517}
+  m_Center: {x: -0.0210605, y: 0.1631852, z: -0.003082711}
+--- !u!114 &6204480769906176638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9193598794607480500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &4530858781275477726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9193598794607480500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f85a5cf13988ca46a4a54c880328444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionEnabled: 1
+  _interactionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _mouseHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _mouseExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _associatedItem: {fileID: 11400000, guid: 1b7388d571bfece43aab313f6af5dc26, type: 2}
+  CurrentStorageIndex: 0
