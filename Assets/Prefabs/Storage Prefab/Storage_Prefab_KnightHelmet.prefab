@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8774718620366817553
+--- !u!1 &2797571132717362940
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1346961883994305554}
-  - component: {fileID: 2627621089907792427}
-  - component: {fileID: 4367300728221024122}
-  - component: {fileID: 8678700715526223908}
-  - component: {fileID: 4399854413967461982}
-  - component: {fileID: 8068389844968045464}
+  - component: {fileID: 3263848755703308987}
+  - component: {fileID: 2695653063404457714}
+  - component: {fileID: 2376004342632952770}
+  - component: {fileID: 718268100049330138}
+  - component: {fileID: 7378618816938296213}
+  - component: {fileID: 6572683162152946096}
   m_Layer: 0
   m_Name: Storage_Prefab_KnightHelmet
   m_TagString: Interactable
@@ -21,36 +21,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1346961883994305554
+--- !u!4 &3263848755703308987
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8774718620366817553}
+  m_GameObject: {fileID: 2797571132717362940}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.40443, y: 0, z: -7.643997}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.154, z: 0}
+  m_LocalScale: {x: 0.81438, y: 0.81438, z: 0.81438}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1346961883994305554}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2627621089907792427
+--- !u!33 &2695653063404457714
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8774718620366817553}
+  m_GameObject: {fileID: 2797571132717362940}
   m_Mesh: {fileID: -6110753319663976815, guid: f79a5034bed20a349a1ef1793d5dfb74, type: 3}
---- !u!23 &4367300728221024122
+--- !u!23 &2376004342632952770
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8774718620366817553}
+  m_GameObject: {fileID: 2797571132717362940}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -89,13 +89,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8678700715526223908
+--- !u!65 &718268100049330138
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8774718620366817553}
+  m_GameObject: {fileID: 2797571132717362940}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -110,13 +110,13 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.28154725, y: 0.4019587, z: 0.3501423}
   m_Center: {x: 0.000062443316, y: 0.004122846, z: 0.025354706}
---- !u!114 &4399854413967461982
+--- !u!114 &7378618816938296213
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8774718620366817553}
+  m_GameObject: {fileID: 2797571132717362940}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
@@ -128,13 +128,13 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &8068389844968045464
+--- !u!114 &6572683162152946096
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8774718620366817553}
+  m_GameObject: {fileID: 2797571132717362940}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f85a5cf13988ca46a4a54c880328444, type: 3}
@@ -152,3 +152,35 @@ MonoBehaviour:
       m_Calls: []
   _associatedItem: {fileID: 11400000, guid: 530b8de5d3b711d4f9e981b84fc5a7d3, type: 2}
   CurrentStorageIndex: 0
+--- !u!1 &8774718620366817553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1346961883994305554}
+  m_Layer: 0
+  m_Name: Storage_Prefab_KnightHelmet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1346961883994305554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8774718620366817553}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.40443, y: 0, z: -7.643997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3263848755703308987}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
