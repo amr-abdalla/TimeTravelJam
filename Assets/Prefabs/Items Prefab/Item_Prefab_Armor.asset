@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae9b70a46f18abd4aabe95647f5b7602, type: 3}
   m_Name: Item_Prefab_Armor
   m_EditorClassIdentifier: 
-  _itemName: Kight Armor
+  _itemName: Knight Armor
   _period: 2
   _itemValue: 100
   _cannotGoInStorage: 0

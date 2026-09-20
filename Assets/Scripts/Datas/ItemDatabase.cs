@@ -3,6 +3,7 @@ using UnityEngine;
 public class ItemDatabase : MonoBehaviour
 {
 	public static ItemDatabase Instance { get; private set; }
+	public TimeItem[] AllItems { get {  return allItems; } }
 	[SerializeField] private TimeItem[] allItems;
 
 	private void Awake()
