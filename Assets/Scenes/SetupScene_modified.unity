@@ -3249,6 +3249,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8624176820797775660, guid: e9d1e8d0a61c9ae41af0e4bb9bcad7a6, type: 3}
   m_PrefabInstance: {fileID: 8409233204561542783}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1388875835 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1781318323824182883, guid: e9d1e8d0a61c9ae41af0e4bb9bcad7a6, type: 3}
+  m_PrefabInstance: {fileID: 8409233204561542783}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03cf009113022a346a69b5d29bf362e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1402378333
 GameObject:
   m_ObjectHideFlags: 0
@@ -3816,9 +3827,11 @@ GameObject:
   - component: {fileID: 1513817692}
   - component: {fileID: 1513817691}
   - component: {fileID: 1513817690}
+  - component: {fileID: 1513817694}
+  - component: {fileID: 1513817693}
   m_Layer: 0
   m_Name: Button-base
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3913,6 +3926,58 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513817688}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1513817693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513817688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e61b027bc0dd344ab2f39198b27183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionEnabled: 1
+  _interactionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1388875835}
+        m_TargetAssemblyTypeName: NpcPositionManager, Assembly-CSharp
+        m_MethodName: RemoveAndDestroyCurrent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _mouseHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _mouseExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1513817694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513817688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1572002010
 GameObject:
   m_ObjectHideFlags: 0
