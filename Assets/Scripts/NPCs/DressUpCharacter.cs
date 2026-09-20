@@ -11,6 +11,8 @@ public class DressUpCharacter : MonoBehaviour
 	private GameObject _hatObject;
 	private StorageManager _storage;
 
+	private AccessoryInteractable[] _accessories;
+
 	enum Gender
 	{
 		Male,
@@ -28,6 +30,12 @@ public class DressUpCharacter : MonoBehaviour
 
 		_storage = StorageManager.Instance;
 		if(_storage == null) _storage = FindFirstObjectByType<StorageManager>();
+
+		_accessories = GetComponentsInChildren<AccessoryInteractable>(true);
+
+		/*foreach (AccessoryInteractable accessory in _accessories)
+			accessory.gameObject.SetActive(false);
+		*/
 	}
 
 	public bool IsItemBusy(TimeItem item)
@@ -67,6 +75,16 @@ public class DressUpCharacter : MonoBehaviour
 			_clothRenderer.enabled = true;
 
 			_clothRenderer.sharedMaterial = _gender == Gender.Male ? _npcCloth.ClothMaterial_M : _npcCloth.ClothMaterial_F;
+		} else if (item is TimeAccessory)
+		{
+			TimeAccessory crntItem = (TimeAccessory) item;
+
+			Debug.Log("Wearing an accessory");
+			foreach(AccessoryInteractable accessory in _accessories)
+			{
+				if (crntItem.AccessoryName.Equals(accessory.AssociatedItem.AccessoryName))
+					accessory.gameObject.SetActive(true);
+			}
 		}
 	}
 
