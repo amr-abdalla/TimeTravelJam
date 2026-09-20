@@ -12,11 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0c520d199a22744b6be072b08aa160, type: 3}
   m_Name: Item_Prefab_Crown
   m_EditorClassIdentifier: 
-  _itemName: 
-  _period: 0
-  _itemValue: 0
+  _itemName: Noble Crown
+  _period: 3
+  _itemValue: 50
   _cannotGoInStorage: 0
   _inStoragePrefab: {fileID: 0}
   _defaultDescription: Use this item on a traveler going on the right time period
-  _periodsDescriptions: []
+  _periodsDescriptions:
+  - period: 0
+    description: After a time paradox, this crown is now found during <b>Prehistory</b>.
+  - period: 1
+    description: "After a time paradox, this crown became an essential pedestal for
+      ceramics crafted during <b>Antiquity</b>.\n "
+  - period: 2
+    description: After a time paradox, this crown is now commonly worn by <b>knights</b>.
+  - period: 3
+    description: 'This crown is a symbol of authority worn by every medieval <b>sovereign</b>. '
   _onCharacterPrefab: {fileID: 0}
