@@ -28,4 +28,4 @@ MonoBehaviour:
     description: After a time paradox, this amphora is now commonly used by <b>knights</b>.
   - period: 3
     description: After a time paradox, this amphora is now commonly used by <b>nobles</b>.
-  _accessoryName: 
+  _accessoryName: Amphora
