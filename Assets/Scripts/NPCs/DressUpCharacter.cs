@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.tvOS;
 
@@ -43,6 +44,11 @@ public class DressUpCharacter : MonoBehaviour
 		if (item is TimeHat) return _npcHat != null;
 		if (item is TimeCloth) return _npcCloth != null;
 
+		if (item is TimeAccessory timeAccessory)
+		{
+			return _accessories.Any(accessory => accessory.gameObject.activeSelf && accessory.AssociatedItem.AccessoryName == timeAccessory.AccessoryName);
+		}
+
 		return false;
 	}
 
@@ -51,7 +57,7 @@ public class DressUpCharacter : MonoBehaviour
 		if(item is TimeHat)
 		{
 
-				_npcHat = (TimeHat)item;
+			_npcHat = (TimeHat)item;
 			
 			if(_hatObject != null)
 				GameObject.Destroy(_hatObject);
