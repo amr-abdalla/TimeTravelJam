@@ -10,6 +10,7 @@ public class NpcPositionManager : MonoBehaviour
 	[SerializeField] private int selectedIndex = 0;
 	[SerializeField] private float radius = 5f;
 	[SerializeField] private float rotationSpeed = 2f;
+	[SerializeField] private InputAction remove;
 
 	private float currentOffset;
 
@@ -27,6 +28,8 @@ public class NpcPositionManager : MonoBehaviour
 	{
 		currentOffset = TargetOffset();
 		ArrangeInCircle();
+		remove.Enable();
+		remove.performed += RemoveAndDestroyCurrent;
 	}
 
 	private void Update()
@@ -40,13 +43,9 @@ public class NpcPositionManager : MonoBehaviour
 		if (Mathf.Abs(Mathf.DeltaAngle(currentOffset, target)) < 0.01f)
 		{
 			currentOffset = target;
-			ArrangeInCircle();
 		}
 
-		if (currentOffset != target)
-		{
-			ArrangeInCircle();
-		}
+		ArrangeInCircle();
 	}
 
 	private float TargetOffset()
@@ -115,11 +114,13 @@ public class NpcPositionManager : MonoBehaviour
 		}
 	}
 
-	public void RemoveAndDestroyCurrent(InputAction.CallbackContext _)
+	public async void RemoveAndDestroyCurrent(InputAction.CallbackContext _)
 	{
 		GameObject selected = GetSelectedNPC();
-		RemoveNPC(selected);
 		Destroy(selected);
+		int destroyedIndex = selectedIndex;
+		SetCenterIndex(selectedIndex + 1);
+		npcs[destroyedIndex] = await NpcSpawner.Instance.SpawnDelayed(2f);
 	}
 
 	public void RemoveNPC(GameObject npc) => npcs.Remove(npc);
