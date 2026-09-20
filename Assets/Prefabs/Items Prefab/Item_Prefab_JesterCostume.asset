@@ -29,5 +29,5 @@ MonoBehaviour:
     description: This costume was worn by jesters to entertain the <b>royal</b> court
       during the Middle Ages.
   _clothType: 0
-  _clothMaterial_M: {fileID: 2100000, guid: 7e8852bda1628424d81b10e7374674c5, type: 2}
+  _clothMaterial_M: {fileID: 2100000, guid: 5cf600e6a32ae1a4c9f86aa181a7b253, type: 2}
   _clothMaterial_F: {fileID: 2100000, guid: 7e8852bda1628424d81b10e7374674c5, type: 2}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd066432f89ea604997ff13726106890, type: 3}
+  m_Name: Item_Prefab_Phone
+  m_EditorClassIdentifier: 
+  _itemName: Phone
+  _period: 2
+  _itemValue: 200
+  _cannotGoInStorage: 1
+  _inStoragePrefab: {fileID: 8443580930201768238, guid: d32d518aa8fe21f41b3399014390f9ee, type: 3}
+  _defaultDescription: This item is forbidden during time travel!
+  _periodsDescriptions: []
+  _accessoryName: Phone

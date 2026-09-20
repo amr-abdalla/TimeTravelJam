@@ -16,7 +16,7 @@ MonoBehaviour:
   _period: 0
   _itemValue: 50
   _cannotGoInStorage: 0
-  _inStoragePrefab: {fileID: 0}
+  _inStoragePrefab: {fileID: 1517437396697274406, guid: ce3deb368cd51eb47a311220ee696e03, type: 3}
   _defaultDescription: Use this item on a traveler going on the right time period
   _periodsDescriptions:
   - period: 0
@@ -28,4 +28,4 @@ MonoBehaviour:
     description: After a time paradox, this club is now commonly used by <b>knights</b>.
   - period: 3
     description: After a time paradox, this club is now commonly used by <b>nobles</b>.
-  _accessoryName: 
+  _accessoryName: Bone Club
