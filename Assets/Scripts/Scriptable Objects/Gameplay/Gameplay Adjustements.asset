@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Gameplay Adjustements
   m_EditorClassIdentifier: 
   _baseCharacterScore: -50
-  _goodItemMultiplier: 1
-  _badItemMultiplier: 2
+  _goodItemMultiplier: 20
+  _badItemMultiplier: 20
   _maxStability: 10000
   _decreaseTime: 1
-  _minDecreaseValue: 500
-  _maxDecreaseValue: 1000
+  _minDecreaseValue: 5
+  _maxDecreaseValue: 25
   _sendSomeoneIncrement: 1
   _thresholdForRandom: 70

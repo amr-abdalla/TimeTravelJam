@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.InputSystem;
 using System.Linq;
+using UnityEngine;
 
 public class NpcPositionManager : MonoBehaviour
 {
@@ -11,6 +10,7 @@ public class NpcPositionManager : MonoBehaviour
 	[SerializeField] private int selectedIndex = 0;
 	[SerializeField] private float radius = 5f;
 	[SerializeField] private float rotationSpeed = 2f;
+	[SerializeField] private NpcText npcText;
 
 	private float currentOffset;
 
@@ -107,13 +107,14 @@ public class NpcPositionManager : MonoBehaviour
 
 	private void OnDeselectNPC(GameObject npc)
 	{
+		npcText.gameObject.SetActive(false);
 		npc.GetComponent<Interactable>().InteractionEnabled = true;
 		npc.transform.rotation = Quaternion.Euler(0, 180, 0);
 		npc.GetComponent<InteractableNPC>().InteractionEnabled = true;
 		npc.GetComponent<Collider>().enabled = true;
 
 		Interactable[] interactables = npc.GetComponentsInChildren<Interactable>().Where(c => c.gameObject != npc.gameObject).ToArray();
-		foreach(Interactable interactable in interactables)
+		foreach (Interactable interactable in interactables)
 		{
 			interactable.InteractionEnabled = false;
 		}
@@ -125,6 +126,9 @@ public class NpcPositionManager : MonoBehaviour
 		npc.GetComponent<Outline>().enabled = false;
 		npc.GetComponent<InteractableNPC>().InteractionEnabled = false;
 		npc.GetComponent<Collider>().enabled = false;
+
+		npcText.UpdateText(npc.GetComponent<NpcData>());
+		npcText.gameObject.SetActive(true);
 
 		Interactable[] interactables = npc.GetComponentsInChildren<Interactable>().Where(c => c.gameObject != npc.gameObject).ToArray();
 		foreach (Interactable interactable in interactables)
