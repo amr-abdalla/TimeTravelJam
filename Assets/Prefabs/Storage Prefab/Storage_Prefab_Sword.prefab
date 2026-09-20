@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7924330519943446695}
   m_Layer: 0
   m_Name: Storage_Prefab_Sword
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
