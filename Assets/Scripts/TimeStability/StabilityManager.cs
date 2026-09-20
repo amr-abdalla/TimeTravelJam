@@ -119,10 +119,12 @@ public class StabilityManager : MonoBehaviour
 
 			//Get Random Item
 
-			TimeItem randomItem = null;
-			TimePeriod randomPeriod = randomItem.Period;
+			TimeItem randomItem = ItemDatabase.Instance.GetRandomItem();
+
+			TimePeriod randomPeriod = ItemDatabase.Instance.GetRandomPeriod();
+
 			do
-				randomPeriod = (TimePeriod)Random.Range(0, 4);
+				randomPeriod = ItemDatabase.Instance.GetRandomPeriod();
 			while (randomPeriod != randomItem.Period);
 
 			AddAnomaly(randomItem, randomPeriod);

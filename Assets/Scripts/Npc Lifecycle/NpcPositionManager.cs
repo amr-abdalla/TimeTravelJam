@@ -151,6 +151,11 @@ public class NpcPositionManager : MonoBehaviour
 	public async void RemoveAndDestroyCurrent(InputAction.CallbackContext _)
 	{
 		GameObject selected = GetSelectedNPC();
+
+		TimePeriod timePeriod = selected.GetComponent<NpcData>().GetGoalTimePeriod();
+		DressUpCharacter dressUpCharacter = selected.GetComponent<DressUpCharacter>();
+		StabilityManager.Instance.SendSomeoneThroughTime(dressUpCharacter, timePeriod);
+
 		Destroy(selected);
 		int destroyedIndex = selectedIndex;
 		SetCenterIndex(selectedIndex + 1);

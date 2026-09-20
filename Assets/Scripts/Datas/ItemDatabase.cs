@@ -34,4 +34,10 @@ public class ItemDatabase : MonoBehaviour
 		return allItems[Random.Range(0, allItems.Length)];
 	}
 
+	private static readonly TimePeriod[] periods = (TimePeriod[])System.Enum.GetValues(typeof(TimePeriod));
+
+	public TimePeriod GetRandomPeriod()
+	{
+		return periods[Random.Range(0, periods.Length)];
+	}
 }

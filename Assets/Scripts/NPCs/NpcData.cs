@@ -4,9 +4,7 @@ public class NpcData : MonoBehaviour
 {
 	[SerializeField] private DressUpCharacter dressUpCharacter;
 	private TimePeriod _goal;
-	public TimePeriod GetGoal() => _goal;
-
-	private static readonly TimePeriod[] periods = (TimePeriod[])System.Enum.GetValues(typeof(TimePeriod));
+	public TimePeriod GetGoalTimePeriod() => _goal;
 
 	public void Randomize()
 	{
@@ -32,6 +30,6 @@ public class NpcData : MonoBehaviour
 		}
 	}
 
-	public void RandomizeGoalTimePeriod() => _goal = periods[Random.Range(0, periods.Length)];
+	public void RandomizeGoalTimePeriod() => _goal = ItemDatabase.Instance.GetRandomPeriod();
 
 }
