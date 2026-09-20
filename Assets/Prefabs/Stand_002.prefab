@@ -97,7 +97,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2794130375641319886}
-  - {fileID: 4976762535414353972}
   - {fileID: 6346311411688456458}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -402,7 +401,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2344048127905864473, guid: 86b8b68f475335e4fb462377490c5980, type: 3}
+  - {fileID: 2100000, guid: 1170cac2075ec7948a1748f53b2bc7d0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -617,116 +616,6 @@ Transform:
   - {fileID: 9221095648924387901}
   m_Father: {fileID: 3359260395402286728}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5498099344659704007
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4976762535414353972}
-  - component: {fileID: 5463311869221352799}
-  m_Layer: 0
-  m_Name: ClothesVarF
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4976762535414353972
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5498099344659704007}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 962255631093665961}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &5463311869221352799
-SkinnedMeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5498099344659704007}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 3
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 9117997812793991795, guid: 86b8b68f475335e4fb462377490c5980, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 0
-  m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4427798999401344256, guid: 86b8b68f475335e4fb462377490c5980, type: 3}
-  m_Bones:
-  - {fileID: 7992708394167620831}
-  - {fileID: 8728661767979617910}
-  - {fileID: 3574470922961911014}
-  - {fileID: 4059078351971944929}
-  - {fileID: 4070066136602135161}
-  - {fileID: 6346311411688456458}
-  - {fileID: 3722550753444727392}
-  - {fileID: 2923448874459172539}
-  - {fileID: 279363209373369532}
-  - {fileID: 6413563026613929135}
-  - {fileID: 3359260395402286728}
-  - {fileID: 6607945619109378031}
-  - {fileID: 3683687670626347543}
-  - {fileID: 1431973024502260832}
-  - {fileID: 6341726195952593956}
-  - {fileID: 1541709910121412212}
-  - {fileID: 5211398963878267671}
-  - {fileID: 6344750091708705202}
-  - {fileID: 5087444334961409011}
-  - {fileID: 5479366606397451937}
-  - {fileID: 4404550881991797395}
-  - {fileID: 649018872648786232}
-  m_BlendShapeWeights: []
-  m_RootBone: {fileID: 6346311411688456458}
-  m_AABB:
-    m_Center: {x: -0.00003772974, y: -0.5712012, z: -0.012905493}
-    m_Extent: {x: 0.94785255, y: 1.075879, z: 0.20160426}
-  m_DirtyAABB: 0
 --- !u!1 &5567923605351910592
 GameObject:
   m_ObjectHideFlags: 0
