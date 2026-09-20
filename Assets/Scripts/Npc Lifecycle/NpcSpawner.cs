@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class NpcSpawner : MonoBehaviour
@@ -23,19 +24,18 @@ public class NpcSpawner : MonoBehaviour
 
 	public GameObject Spawn()
 	{
-		return Instantiate(NpcPrefab, null);
-
+		GameObject npc = Instantiate(NpcPrefab, null);
 		// some cool vfx here
-		// instantiate
-		// wear random items
+		npc.SetActive(false);
 
-		/*
+		npc.GetComponent<NpcData>().Randomize();
 		Interactable[] interactables = npc.GetComponentsInChildren<Interactable>().Where(c => c.gameObject != npc.gameObject).ToArray();
-		foreach(Interactable interactable in interactables)
+		foreach (Interactable interactable in interactables)
 		{
 			interactable.InteractionEnabled = false;
 		}
 
-		 */
+		npc.SetActive(true);
+		return npc;
 	}
 }

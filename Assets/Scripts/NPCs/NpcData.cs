@@ -6,6 +6,14 @@ public class NpcData : MonoBehaviour
 	private TimePeriod _goal;
 	public TimePeriod GetGoal() => _goal;
 
+	private static readonly TimePeriod[] periods = (TimePeriod[])System.Enum.GetValues(typeof(TimePeriod));
+
+	public void Randomize()
+	{
+		RandomizeDressUpCharacter();
+		RandomizeGoalTimePeriod();
+	}
+
 	public void RandomizeDressUpCharacter()
 	{
 		int startingItemCount = Random.Range(1, 5);
@@ -24,10 +32,6 @@ public class NpcData : MonoBehaviour
 		}
 	}
 
-	public void RandomizeGoalTimePeriod()
-	{
-		TimePeriod[] periods = (TimePeriod[])System.Enum.GetValues(typeof(TimePeriod));
-		_goal = periods[Random.Range(0, periods.Length)];
-	}
+	public void RandomizeGoalTimePeriod() => _goal = periods[Random.Range(0, periods.Length)];
 
 }
