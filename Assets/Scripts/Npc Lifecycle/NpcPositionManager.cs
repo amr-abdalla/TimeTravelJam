@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Linq;
 
 public class NpcPositionManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class NpcPositionManager : MonoBehaviour
 	[SerializeField] private int selectedIndex = 0;
 	[SerializeField] private float radius = 5f;
 	[SerializeField] private float rotationSpeed = 2f;
+	[SerializeField] private InputAction remove;
 
 	private float currentOffset;
 
@@ -25,8 +27,11 @@ public class NpcPositionManager : MonoBehaviour
 
 	private void OnEnable()
 	{
+		SetCenterIndex(0);
 		currentOffset = TargetOffset();
 		ArrangeInCircle();
+		remove.Enable();
+		remove.performed += RemoveAndDestroyCurrent;
 	}
 
 	private void Update()
@@ -40,13 +45,9 @@ public class NpcPositionManager : MonoBehaviour
 		if (Mathf.Abs(Mathf.DeltaAngle(currentOffset, target)) < 0.01f)
 		{
 			currentOffset = target;
-			ArrangeInCircle();
 		}
 
-		if (currentOffset != target)
-		{
-			ArrangeInCircle();
-		}
+		ArrangeInCircle();
 	}
 
 	private float TargetOffset()
@@ -86,8 +87,7 @@ public class NpcPositionManager : MonoBehaviour
 		if (npcs == null || npcs.Count <= 0)
 			return;
 
-		GetSelectedNPC().GetComponent<Interactable>().InteractionEnabled = true;
-		GetSelectedNPC().transform.rotation = Quaternion.Euler(0, 90, 0);
+		OnDeselectNPC(GetSelectedNPC());
 
 		if (index < 0)
 		{
@@ -99,8 +99,35 @@ public class NpcPositionManager : MonoBehaviour
 		}
 
 		selectedIndex = index;
-		GetSelectedNPC().GetComponent<Interactable>().InteractionEnabled = false;
-		GetSelectedNPC().GetComponent<Outline>().enabled = false;
+		OnSelectNPC(GetSelectedNPC());
+	}
+
+	private void OnDeselectNPC(GameObject npc)
+	{
+		npc.GetComponent<Interactable>().InteractionEnabled = true;
+		npc.transform.rotation = Quaternion.Euler(0, 90f, 0);
+		npc.GetComponent<InteractableNPC>().InteractionEnabled = true;
+		npc.GetComponent<Collider>().enabled = true;
+
+		Interactable[] interactables = npc.GetComponentsInChildren<Interactable>().Where(c => c.gameObject != npc.gameObject).ToArray();
+		foreach(Interactable interactable in interactables)
+		{
+			interactable.InteractionEnabled = false;
+		}
+	}
+
+	private void OnSelectNPC(GameObject npc)
+	{
+		npc.GetComponent<Interactable>().InteractionEnabled = false;
+		npc.GetComponent<Outline>().enabled = false;
+		npc.GetComponent<InteractableNPC>().InteractionEnabled = false;
+		npc.GetComponent<Collider>().enabled = false;
+
+		Interactable[] interactables = npc.GetComponentsInChildren<Interactable>().Where(c => c.gameObject != npc.gameObject).ToArray();
+		foreach (Interactable interactable in interactables)
+		{
+			interactable.InteractionEnabled = true;
+		}
 	}
 
 	public void SelectNPC(GameObject npc)
@@ -115,11 +142,13 @@ public class NpcPositionManager : MonoBehaviour
 		}
 	}
 
-	public void RemoveAndDestroyCurrent(InputAction.CallbackContext _)
+	public async void RemoveAndDestroyCurrent(InputAction.CallbackContext _)
 	{
 		GameObject selected = GetSelectedNPC();
-		RemoveNPC(selected);
 		Destroy(selected);
+		int destroyedIndex = selectedIndex;
+		SetCenterIndex(selectedIndex + 1);
+		npcs[destroyedIndex] = await NpcSpawner.Instance.SpawnDelayed(2f);
 	}
 
 	public void RemoveNPC(GameObject npc) => npcs.Remove(npc);
