@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9b70a46f18abd4aabe95647f5b7602, type: 3}
+  m_Name: Item_Prefab_JesterCostume
+  m_EditorClassIdentifier: 
+  _itemName: Jester outfit
+  _period: 2
+  _itemValue: 100
+  _cannotGoInStorage: 0
+  _inStoragePrefab: {fileID: 5057020493153076344, guid: 26abb14694aced145b3c529e68f75614, type: 3}
+  _defaultDescription: Use this item on a traveler going on the right time period
+  _periodsDescriptions:
+  - period: 0
+    description: After a time paradox, this costume is now worn during <b>Prehistory</b>.
+  - period: 1
+    description: After a time paradox, this costume is now worn during <b>Antiquity</b>.
+  - period: 2
+    description: After a time paradoxe, this costume is now worn by <b>knights</b>.
+  - period: 3
+    description: This costume was worn by jesters to entertain the <b>royal</b> court
+      during the Middle Ages.
+  _clothType: 0
+  _clothMaterial_M: {fileID: 2100000, guid: 7e8852bda1628424d81b10e7374674c5, type: 2}
+  _clothMaterial_F: {fileID: 2100000, guid: 7e8852bda1628424d81b10e7374674c5, type: 2}

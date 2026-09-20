@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9b70a46f18abd4aabe95647f5b7602, type: 3}
+  m_Name: Item_Prefab_Armor
+  m_EditorClassIdentifier: 
+  _itemName: Kight Armor
+  _period: 2
+  _itemValue: 100
+  _cannotGoInStorage: 0
+  _inStoragePrefab: {fileID: 5057020493153076344, guid: d532cbe84dee5d441b6aeee6bf6b3d75, type: 3}
+  _defaultDescription: Use this item on a traveler going on the right time period
+  _periodsDescriptions:
+  - period: 0
+    description: After a time paradox, this armour became a percussion instrument
+      used during the first <b>prehistoric</b> parties.
+  - period: 1
+    description: After a time paradox, this armour allowed chubby warriors to fight
+      alongside their athletic mates during <b>Antiquity</b>'s conflicts.
+  - period: 2
+    description: This armour was the main piece of every <b>knight</b>'s equipment
+      during the Middle Ages.
+  - period: 3
+    description: After a time paradox, this armour is now worn during <b>aristocratic</b>
+      ball to aura farm.
+  _clothType: 0
+  _clothMaterial_M: {fileID: 0}
+  _clothMaterial_F: {fileID: 2100000, guid: 22f4e0affbe18d74c921048d2af3b4d8, type: 2}

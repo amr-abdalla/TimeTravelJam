@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9b70a46f18abd4aabe95647f5b7602, type: 3}
+  m_Name: Item_Prefab_Toga
+  m_EditorClassIdentifier: 
+  _itemName: Philosopher's Toga
+  _period: 1
+  _itemValue: 100
+  _cannotGoInStorage: 0
+  _inStoragePrefab: {fileID: 5057020493153076344, guid: 8b70c788392c5a84ba397dac9ec6321b, type: 3}
+  _defaultDescription: Use this item on a traveler going on the right time period
+  _periodsDescriptions:
+  - period: 0
+    description: After a time paradox, this toga is now found during <b>Prehistory</b>.
+  - period: 1
+    description: This toga was seen has a traditionnal scholar uniforms by philosophers
+      during <b>Antiquity</b>.
+  - period: 2
+    description: After a time paradox, this toga is now commonly worn by <b>knights</b>.
+  - period: 3
+    description: After a time paradox, this toga is now commonly worn by <b>nobles</b>.
+  _clothType: 0
+  _clothMaterial_M: {fileID: 2100000, guid: d7c5381500993ac40bb14f2fa36b4430, type: 2}
+  _clothMaterial_F: {fileID: 2100000, guid: d7c5381500993ac40bb14f2fa36b4430, type: 2}

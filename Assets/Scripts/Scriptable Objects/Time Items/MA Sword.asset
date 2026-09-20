@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd066432f89ea604997ff13726106890, type: 3}
+  m_Name: MA Sword
+  m_EditorClassIdentifier: 
+  _itemName: Knight Sword
+  _period: 2
+  _itemValue: 0
+  _inStoragePrefab: {fileID: 0}
+  _defaultDescription: Use this item on a traveler going on the right time period
+  _periodsDescriptions:
+  - period: 0
+    description: After a time paradoxe, this sword now help <b>prehistoric</b> tribes
+      to exterminate mammoths.
+  - period: 1
+    description: After a time paradoxe, this sword is said to be forged by <b>Antiquity</b>'s
+      divinities.
+  - period: 2
+    description: This sword was wielded by knights during tournament in the <b>Middle
+      Ages</b>.
+  - period: 3
+    description: After a time paradoxe, this sword is now commonly used during <b>Indusrial
+      Revolution</b>.
+  _accessoryName: 

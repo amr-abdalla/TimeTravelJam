@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0c520d199a22744b6be072b08aa160, type: 3}
+  m_Name: Item_Prefab_CenturionHelmet
+  m_EditorClassIdentifier: 
+  _itemName: Centurion Helmet
+  _period: 1
+  _itemValue: 50
+  _cannotGoInStorage: 0
+  _inStoragePrefab: {fileID: 9193598794607480500, guid: 370cd000ac189044bb06dcedf05bfc40, type: 3}
+  _defaultDescription: Use this item on a traveler going on the right time period
+  _periodsDescriptions:
+  - period: 0
+    description: After a time paradox, this helmet is now found during <b>Prehistory</b>.
+  - period: 1
+    description: This helmet was worn by army officers during <b>Antiquity</b>, so
+      the ennemy knew who to focus on in battle.
+  - period: 2
+    description: After a time paradox, this helmet is now commonly worn by <b>knights</b>.
+  - period: 3
+    description: After a time paradox, this helmet is now commonly worn by <b>nobles</b>.
+  _onCharacterPrefab: {fileID: 0}

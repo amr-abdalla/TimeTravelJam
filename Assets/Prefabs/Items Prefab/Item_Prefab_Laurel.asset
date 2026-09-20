@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0c520d199a22744b6be072b08aa160, type: 3}
+  m_Name: Item_Prefab_Laurel
+  m_EditorClassIdentifier: 
+  _itemName: Winner's Crown
+  _period: 1
+  _itemValue: 50
+  _cannotGoInStorage: 0
+  _inStoragePrefab: {fileID: 7679824704720161941, guid: 57712d8d11422884f9cd07fd2bcd8c44, type: 3}
+  _defaultDescription: Use this item on a traveler going on the right time period
+  _periodsDescriptions:
+  - period: 0
+    description: After a time paradox, this laural crown is now found during <b>Prehistory</b>.
+  - period: 1
+    description: This laurel crown was traditionnaly used during <b>Antiquity</b>
+      as a symbol of triumph to revard sport championship winners.
+  - period: 2
+    description: After a time paradox, this laural crown is now commonly worn by
+      <b>knights</b>.
+  - period: 3
+    description: After a time paradox, this laural crown is now commonly worn by
+      <b>nobles</b>.
+  _onCharacterPrefab: {fileID: 0}
