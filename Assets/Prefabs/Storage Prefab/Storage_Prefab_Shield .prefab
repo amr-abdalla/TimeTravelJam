@@ -109,9 +109,6 @@ GameObject:
   - component: {fileID: 5501916226076312424}
   - component: {fileID: 7540550838102423279}
   - component: {fileID: 4233399899220933940}
-  - component: {fileID: 2450573071027494040}
-  - component: {fileID: 5239887856522249025}
-  - component: {fileID: 9019819738407832290}
   m_Layer: 0
   m_Name: 'Storage_Prefab_Shield '
   m_TagString: Interactable
@@ -187,66 +184,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2450573071027494040
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7748330078285766722}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.5821129, y: 0.016233021, z: 1.0233284}
-  m_Center: {x: 0.006545514, y: -0.0000000018626451, z: 0.06552406}
---- !u!114 &5239887856522249025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7748330078285766722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
---- !u!114 &9019819738407832290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7748330078285766722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f85a5cf13988ca46a4a54c880328444, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractionEnabled: 1
-  _interactionEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _mouseHoverEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _mouseExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _associatedItem: {fileID: 11400000, guid: 25ca9733027ae0747b355ab06f42c1d6, type: 2}
-  CurrentStorageIndex: 0

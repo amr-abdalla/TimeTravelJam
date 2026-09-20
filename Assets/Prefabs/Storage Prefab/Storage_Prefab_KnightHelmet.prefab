@@ -11,9 +11,6 @@ GameObject:
   - component: {fileID: 3263848755703308987}
   - component: {fileID: 2695653063404457714}
   - component: {fileID: 2376004342632952770}
-  - component: {fileID: 718268100049330138}
-  - component: {fileID: 7378618816938296213}
-  - component: {fileID: 6572683162152946096}
   m_Layer: 0
   m_Name: Storage_Prefab_KnightHelmet
   m_TagString: Interactable
@@ -89,69 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &718268100049330138
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2797571132717362940}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.28154725, y: 0.4019587, z: 0.3501423}
-  m_Center: {x: 0.000062443316, y: 0.004122846, z: 0.025354706}
---- !u!114 &7378618816938296213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2797571132717362940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
---- !u!114 &6572683162152946096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2797571132717362940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f85a5cf13988ca46a4a54c880328444, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractionEnabled: 1
-  _interactionEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _mouseHoverEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _mouseExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  _associatedItem: {fileID: 11400000, guid: 530b8de5d3b711d4f9e981b84fc5a7d3, type: 2}
-  CurrentStorageIndex: 0
 --- !u!1 &8774718620366817553
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,6 +95,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1346961883994305554}
+  - component: {fileID: 5445927431471482984}
+  - component: {fileID: 7973622015899103820}
+  - component: {fileID: 7147648356766724809}
   m_Layer: 0
   m_Name: Storage_Prefab_KnightHelmet
   m_TagString: Untagged
@@ -184,3 +121,66 @@ Transform:
   - {fileID: 3263848755703308987}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5445927431471482984
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8774718620366817553}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.28154725, y: 0.34051126, z: 0.30405712}
+  m_Center: {x: 0.000062435865, y: 0.15774158, z: 0.025354862}
+--- !u!114 &7973622015899103820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8774718620366817553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &7147648356766724809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8774718620366817553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f85a5cf13988ca46a4a54c880328444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionEnabled: 1
+  _interactionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _mouseHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _mouseExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _associatedItem: {fileID: 11400000, guid: 530b8de5d3b711d4f9e981b84fc5a7d3, type: 2}
+  CurrentStorageIndex: 0
