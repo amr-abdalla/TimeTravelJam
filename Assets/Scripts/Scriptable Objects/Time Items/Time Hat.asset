@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae9b70a46f18abd4aabe95647f5b7602, type: 3}
-  m_Name: Time Cloth
+  m_Script: {fileID: 11500000, guid: 0d0c520d199a22744b6be072b08aa160, type: 3}
+  m_Name: Time Hat
   m_EditorClassIdentifier: 
   _itemName: 
   _period: 0
@@ -19,6 +19,4 @@ MonoBehaviour:
   _inStoragePrefab: {fileID: 0}
   _defaultDescription: Use this item on a traveler going on the right time period
   _periodsDescriptions: []
-  _clothType: 1
-  _clothMaterial_M: {fileID: 0}
-  _clothMaterial_F: {fileID: 0}
+  _onCharacterPrefab: {fileID: 0}
