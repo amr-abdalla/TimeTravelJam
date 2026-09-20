@@ -19,7 +19,7 @@ public class NpcPositionManager : MonoBehaviour
 	{
 		if (Instance != null)
 		{
-			Debug.LogWarning("Two instances of InputManager detected, destroying one");
+			Debug.LogWarning($"Two instances of {GetType()} detected, destroying one");
 			Destroy(Instance);
 		}
 		Instance = this;

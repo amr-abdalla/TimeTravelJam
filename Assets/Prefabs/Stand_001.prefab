@@ -794,9 +794,12 @@ GameObject:
   m_Component:
   - component: {fileID: 701186404973539863}
   - component: {fileID: 2612988433581115062}
+  - component: {fileID: 2066460194043039784}
+  - component: {fileID: 1358786524740842190}
+  - component: {fileID: 6109781115024469484}
   m_Layer: 0
   m_Name: ClothesVarF
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -894,6 +897,80 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00003772974, y: -0.5712012, z: -0.012905493}
     m_Extent: {x: 0.94785255, y: 1.075879, z: 0.20160426}
   m_DirtyAABB: 0
+--- !u!64 &2066460194043039784
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5927145641208330573}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!114 &1358786524740842190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5927145641208330573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &6109781115024469484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5927145641208330573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b385d3346c7e57542a7de43cbcaae9ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionEnabled: 1
+  _interactionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4681572358322308879}
+        m_TargetAssemblyTypeName: DressUpCharacter, Assembly-CSharp
+        m_MethodName: RemoveCloth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _mouseHoverEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _mouseExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6809832782880445940
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,6 +1046,8 @@ GameObject:
   - component: {fileID: 1777295266626852302}
   - component: {fileID: 5904453459038094083}
   - component: {fileID: 282774336687231188}
+  - component: {fileID: 4681572358322308879}
+  - component: {fileID: -2846861161142138887}
   m_Layer: 0
   m_Name: Stand_001
   m_TagString: Interactable
@@ -1086,6 +1165,34 @@ MonoBehaviour:
   _mouseExitEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4681572358322308879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7803161073862200894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 964f7d61997e21b48bee8e590af4a677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gender: 0
+  _hatParent: {fileID: 1770474787132577901}
+  _clothRenderer: {fileID: 2612988433581115062}
+--- !u!114 &-2846861161142138887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7803161073862200894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30914c61475cab74a871078b19beee2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dressUpCharacter: {fileID: 4681572358322308879}
 --- !u!1 &8216460001442294879
 GameObject:
   m_ObjectHideFlags: 0

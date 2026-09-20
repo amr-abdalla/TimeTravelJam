@@ -1,12 +1,11 @@
-using System.Collections;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.tvOS;
 
 public class DressUpCharacter : MonoBehaviour
 {
-	public TimeHat NpcHat { get {  return _npcHat; } }
+	public TimeHat NpcHat { get { return _npcHat; } }
 	private TimeHat _npcHat;
-	public TimeCloth NpcCloth {  get { return _npcCloth; } }
+	public TimeCloth NpcCloth { get { return _npcCloth; } }
 	private TimeCloth _npcCloth;
 	private GameObject _hatObject;
 	private StorageManager _storage;
@@ -22,20 +21,20 @@ public class DressUpCharacter : MonoBehaviour
 	[SerializeField] private Transform _hatParent;
 	[SerializeField] private SkinnedMeshRenderer _clothRenderer;
 
-	private void Start()
+	private void OnEnable()
 	{
 		_npcHat = null;
 		_hatObject = null;
 		_clothRenderer.gameObject.SetActive(false);
 
 		_storage = StorageManager.Instance;
-		if(_storage == null) _storage = FindFirstObjectByType<StorageManager>();
+		if (_storage == null) _storage = FindFirstObjectByType<StorageManager>();
 
 		_accessories = GetComponentsInChildren<AccessoryInteractable>(true);
 
-		/*foreach (AccessoryInteractable accessory in _accessories)
+		foreach (AccessoryInteractable accessory in _accessories)
 			accessory.gameObject.SetActive(false);
-		*/
+
 	}
 
 	public bool IsItemBusy(TimeItem item)
@@ -43,17 +42,22 @@ public class DressUpCharacter : MonoBehaviour
 		if (item is TimeHat) return _npcHat != null;
 		if (item is TimeCloth) return _npcCloth != null;
 
+		if (item is TimeAccessory timeAccessory)
+		{
+			return _accessories.Any(accessory => accessory.gameObject.activeSelf && accessory.AssociatedItem.ItemName == timeAccessory.ItemName);
+		}
+
 		return false;
 	}
 
 	public void WearItem(TimeItem item)
 	{
-		if(item is TimeHat)
+		if (item is TimeHat)
 		{
 
-				_npcHat = (TimeHat)item;
-			
-			if(_hatObject != null)
+			_npcHat = (TimeHat)item;
+
+			if (_hatObject != null)
 				GameObject.Destroy(_hatObject);
 
 			_hatObject = GameObject.Instantiate(_npcHat.OnCharacterPrefab, _hatParent);
@@ -62,27 +66,29 @@ public class DressUpCharacter : MonoBehaviour
 
 			HatInteractable interact = _hatObject.GetComponent<HatInteractable>();
 
-			if(interact == null)
+			if (interact == null)
 				Debug.LogError("No Hat Interactable found on the hat you're trying to wear, you won't be able to remove the hat", this.gameObject);
 
 			interact.AssociatedCharacter = this;
 
-		} else if (item is TimeCloth)
+		}
+		else if (item is TimeCloth)
 		{
 
-			_npcCloth = (TimeCloth) item;
+			_npcCloth = (TimeCloth)item;
 			_clothRenderer.gameObject.SetActive(true);
 			_clothRenderer.enabled = true;
 
 			_clothRenderer.sharedMaterial = _gender == Gender.Male ? _npcCloth.ClothMaterial_M : _npcCloth.ClothMaterial_F;
-		} else if (item is TimeAccessory)
+		}
+		else if (item is TimeAccessory)
 		{
-			TimeAccessory crntItem = (TimeAccessory) item;
+			TimeAccessory crntItem = (TimeAccessory)item;
 
 			Debug.Log("Wearing an accessory");
-			foreach(AccessoryInteractable accessory in _accessories)
+			foreach (AccessoryInteractable accessory in _accessories)
 			{
-				if (crntItem.AccessoryName.Equals(accessory.AssociatedItem.AccessoryName))
+				if (crntItem.ItemName.Equals(accessory.AssociatedItem.ItemName))
 					accessory.gameObject.SetActive(true);
 			}
 		}
@@ -118,14 +124,14 @@ public class DressUpCharacter : MonoBehaviour
 	{
 		int score = adjustements.BaseCharacterScore;
 
-		if(_npcHat != null)
-			score += (int) (_npcHat.ItemValue * (_npcHat.Period == period ? adjustements.GoodItemMultiplier : adjustements.BadItemMultiplier * -1f));
+		if (_npcHat != null)
+			score += (int)(_npcHat.ItemValue * (_npcHat.Period == period ? adjustements.GoodItemMultiplier : adjustements.BadItemMultiplier * -1f));
 		if (_npcCloth != null)
 			score += (int)(_npcCloth.ItemValue * (_npcCloth.Period == period ? adjustements.GoodItemMultiplier : adjustements.BadItemMultiplier * -1f));
 
 		foreach (AccessoryInteractable accessory in _accessories)
 			if (accessory.gameObject.activeSelf)
-				score += (int)(accessory.AssociatedItem.ItemValue * (accessory.AssociatedItem.Period == period && !accessory.AssociatedItem.CannotGoInStorage ? 
+				score += (int)(accessory.AssociatedItem.ItemValue * (accessory.AssociatedItem.Period == period && !accessory.AssociatedItem.CannotGoInStorage ?
 					adjustements.GoodItemMultiplier : adjustements.BadItemMultiplier * -1f));
 
 		return score;
