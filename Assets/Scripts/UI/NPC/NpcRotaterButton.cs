@@ -13,6 +13,7 @@ public class NpcRotaterButton : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
 	public void OnPointerDown(PointerEventData eventData)
 	{
+		Debug.Log("down");
 		if (eventData.button != PointerEventData.InputButton.Left)
 			return;
 
