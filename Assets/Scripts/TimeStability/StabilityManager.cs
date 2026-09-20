@@ -1,17 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StabilityManager : MonoBehaviour
 {
 	public static StabilityManager Instance { get; private set; }
 
+	public GameplayAdjustements Adujstements {  get {  return _adjustements; } }
 	[SerializeField] private GameplayAdjustements _adjustements;
+	[SerializeField] private UnityEvent _gameOverEvent;
 
 	private Dictionary<TimeItem, TimePeriod> _timeAnomalies;
 
-	public int CurrentStability { get { return _currentStability; } }
+	public int CurrentStability { 
+		get { return _currentStability; } 
+		set
+		{
+			_currentStability = value;
+			_stabilityBar.Value = (float) (_currentStability);
+			if(_currentStability <= 0)
+				_gameOverEvent.Invoke();
+		}
+	}
 	[SerializeField] private int _currentStability;
+
+	[SerializeField] private UI_StabilityBar _stabilityBar;
 
 	private int _currentDecrease;
 
@@ -33,6 +47,8 @@ public class StabilityManager : MonoBehaviour
 
 		_currentStability = _adjustements.MaxStability;
 		_currentDecrease = _adjustements.MinDecreaseValue;
+
+		_stabilityBar.InitializeBar((float) _adjustements.MaxStability, (float)_currentStability);
 
 		StartCoroutine(stabilityCoroutine());
 		StartCoroutine(testSomeoneThroughTime());
@@ -57,7 +73,7 @@ public class StabilityManager : MonoBehaviour
 
 		int score = character.CalculateOutfitScore(period, _adjustements);
 
-		_currentStability += score;
+		CurrentStability += score;
 
 		CheckForAnomaly();
 	}
@@ -68,7 +84,7 @@ public class StabilityManager : MonoBehaviour
 		{
 			yield return new WaitForSeconds(_adjustements.DecreaseTime);
 
-			_currentStability -= _currentDecrease;
+			CurrentStability -= _currentDecrease;
 		}
 	}
 
@@ -83,16 +99,16 @@ public class StabilityManager : MonoBehaviour
 
 	public void CheckForAnomaly()
 	{
-		float thresholdValue = ((_adjustements.ThresholdForRandom * _adjustements.MaxStability) / 100);
+		float thresholdValue = ((_adjustements.ThresholdForRandom * _adjustements.MaxStability) / 100f);
 
-		if (_currentStability > thresholdValue)
+		if (CurrentStability > thresholdValue)
 			return;
 
 		//Debug.Log("Check");
 
 		float dice = Random.Range(0, thresholdValue);
 
-		if(dice > _currentStability)
+		if(dice > CurrentStability)
 		{
 			Debug.Log("ANOMALY");
 			//Get Random Item

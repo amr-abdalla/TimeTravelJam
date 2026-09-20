@@ -17,7 +17,7 @@ MonoBehaviour:
   _badItemMultiplier: 2
   _maxStability: 10000
   _decreaseTime: 1
-  _minDecreaseValue: 5
-  _maxDecreaseValue: 25
+  _minDecreaseValue: 500
+  _maxDecreaseValue: 1000
   _sendSomeoneIncrement: 1
   _thresholdForRandom: 70
