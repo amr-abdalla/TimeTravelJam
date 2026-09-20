@@ -79,7 +79,7 @@ public class StorageManager : MonoBehaviour
 
 	public void ItemWearCallback(int index, TimeItem item)
 	{
-		DressUpCharacter currentCharacter = FindFirstObjectByType<DressUpCharacter>();
+		DressUpCharacter currentCharacter = NpcPositionManager.Instance.GetSelectedNPC().GetComponent<DressUpCharacter>();
 
 		TimeItem crntCharacterItem = null;
 
