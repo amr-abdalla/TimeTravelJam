@@ -419,6 +419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4859365493894232102}
+  - component: {fileID: 7976476417894447571}
   m_Layer: 5
   m_Name: Stability Bar
   m_TagString: Untagged
@@ -451,3 +452,21 @@ RectTransform:
   m_AnchoredPosition: {x: -20.5, y: -1060}
   m_SizeDelta: {x: 2264, y: 1071.56}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7976476417894447571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6704720233043908827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1de358e785ae684489b1d92fe6176344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxValue: 0
+  _chipSpeed: 2
+  _frontBar: {fileID: 6989366063727564091}
+  _backBar: {fileID: 5082213602628408728}
+  _fullColor: {r: 0.25636962, g: 0.9150943, b: 0, a: 1}
+  _emptyColor: {r: 0.7924528, g: 0.17279446, b: 0.018689923, a: 1}

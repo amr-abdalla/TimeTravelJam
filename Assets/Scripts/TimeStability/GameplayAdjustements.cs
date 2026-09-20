@@ -14,6 +14,8 @@ public class GameplayAdjustements : ScriptableObject
     public int MaxDecreaseValue { get {return _maxDecreaseValue; } }
     public int SendSomeoneIncrement {  get { return _sendSomeoneIncrement; } }
 
+    public float ThresholdForRandom {  get { return _thresholdForRandom; } }
+
 
     [Header("Score Calculation")]
 
@@ -46,5 +48,5 @@ public class GameplayAdjustements : ScriptableObject
 
     [Header("Random Events")]
 	[Tooltip("Percentage Threshold to start calculating random event")]
-	    [SerializeField] private float _percentThresholdForRandom = 70f;
+	    [SerializeField] private float _thresholdForRandom = 70f;
 }
