@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 573641144374254205}
   - component: {fileID: 2470139291725050222}
   m_Layer: 0
-  m_Name: Storage_Prefab_Cloth
+  m_Name: _Cloth
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

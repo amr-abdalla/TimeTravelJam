@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd066432f89ea604997ff13726106890, type: 3}
+  m_Name: Item_Prefab_Sword
+  m_EditorClassIdentifier: 
+  _itemName: Knigh Sword
+  _period: 2
+  _itemValue: 50
+  _cannotGoInStorage: 0
+  _inStoragePrefab: {fileID: 8443580930201768238, guid: d32d518aa8fe21f41b3399014390f9ee, type: 3}
+  _defaultDescription: Use this item on a traveler going on the right time period
+  _periodsDescriptions:
+  - period: 0
+    description: After a time paradox, this sword now help <b>prehistoric</b> tribes
+      to exterminate mammoths.
+  - period: 1
+    description: After a time paradox, this sword was taken by a greek tribe where
+      it's said to be forged by <b>Antiquity</b>'s divinities.
+  - period: 2
+    description: This sword was wielded by <b>knights</b> during tournament in the
+      Middle Ages.
+  - period: 3
+    description: After a time paradox, this sword is now used by <b>nobles</b> during
+      ceremonies.
+  _accessoryName: 
