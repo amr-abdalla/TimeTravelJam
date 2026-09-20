@@ -5,7 +5,7 @@ public class InteractionManager : MonoBehaviour
 {
 	public static InteractionManager Instance { get; private set; }
 
-	public Vector2 MousePosition {  get; private set; } //if for any reasons we need to gather the mouse pos outside of the input manager (panning the camera ?)
+	public Vector2 MousePosition { get; private set; } //if for any reasons we need to gather the mouse pos outside of the input manager (panning the camera ?)
 
 	private InputSystem_Actions _actions;
 	private Camera _cam;
@@ -14,9 +14,10 @@ public class InteractionManager : MonoBehaviour
 
 	private void Awake()
 	{
-		if (Instance != null) {
+		if (Instance != null)
+		{
 			Debug.LogWarning("Two instances of InputManager detected, destroying one");
-			Destroy(Instance); 
+			Destroy(Instance);
 		}
 		Instance = this;
 
@@ -50,7 +51,7 @@ public class InteractionManager : MonoBehaviour
 		if (_currentInteractable == null)
 			return;
 
-		if(_currentInteractable.InteractionEnabled)
+		if (_currentInteractable.InteractionEnabled)
 			_currentInteractable.Interaction();
 	}
 
@@ -71,6 +72,11 @@ public class InteractionManager : MonoBehaviour
 
 				if (interact != _currentInteractable && interact.enabled)
 				{
+					if (_currentInteractable != null)
+					{
+						cleanCurrentInteract();
+					}
+
 					_currentInteractable = interact;
 					_currentInteractable.MouseHoverCallback();
 				}
