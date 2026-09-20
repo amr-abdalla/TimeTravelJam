@@ -12,11 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0c520d199a22744b6be072b08aa160, type: 3}
   m_Name: Item_Prefab_JesterHat
   m_EditorClassIdentifier: 
-  _itemName: 
-  _period: 0
-  _itemValue: 0
+  _itemName: Jester Hat
+  _period: 2
+  _itemValue: 50
   _cannotGoInStorage: 0
-  _inStoragePrefab: {fileID: 0}
+  _inStoragePrefab: {fileID: 6572964023199265758, guid: cf5375a6772dd3a499c9a04164a0e677, type: 3}
   _defaultDescription: Use this item on a traveler going on the right time period
-  _periodsDescriptions: []
+  _periodsDescriptions:
+  - period: 0
+    description: After a time paradox, this hat is now used by <b>prehistoric</b>
+      people to play with their sabertooth cat.
+  - period: 1
+    description: After a time paradox, this funny hat is now usually worn during
+      <b>Antiquity</b>, by politician when they speak in public.
+  - period: 2
+    description: After a time paradox, this funny hat is now commonly worn by <b>knights</b>
+      on the battlefield.
+  - period: 3
+    description: This funny hat was traditionally worn by jesters during their performances
+      before <b>nobles</b>.
   _onCharacterPrefab: {fileID: 0}

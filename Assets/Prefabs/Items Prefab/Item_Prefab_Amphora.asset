@@ -12,11 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd066432f89ea604997ff13726106890, type: 3}
   m_Name: Item_Prefab_Amphora
   m_EditorClassIdentifier: 
-  _itemName: 
-  _period: 0
-  _itemValue: 0
+  _itemName: Spiced Wine
+  _period: 1
+  _itemValue: 50
   _cannotGoInStorage: 0
-  _inStoragePrefab: {fileID: 0}
+  _inStoragePrefab: {fileID: 8475734239582533912, guid: 50b6a3c3212b6bb4f8df31eee990332e, type: 3}
   _defaultDescription: Use this item on a traveler going on the right time period
-  _periodsDescriptions: []
+  _periodsDescriptions:
+  - period: 0
+    description: After a time paradox, this amphora is now found during <b>Prehistory</b>.
+  - period: 1
+    description: This amphora countains a liquor appreciated by every citizen during
+      <b>Antiquity</b>.
+  - period: 2
+    description: After a time paradox, this amphora is now commonly used by <b>knights</b>.
+  - period: 3
+    description: After a time paradox, this amphora is now commonly used by <b>nobles</b>.
   _accessoryName: 

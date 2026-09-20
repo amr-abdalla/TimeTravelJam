@@ -16,7 +16,19 @@ MonoBehaviour:
   _period: 2
   _itemValue: 50
   _cannotGoInStorage: 0
-  _inStoragePrefab: {fileID: 0}
+  _inStoragePrefab: {fileID: 8443580930201768238, guid: d32d518aa8fe21f41b3399014390f9ee, type: 3}
   _defaultDescription: Use this item on a traveler going on the right time period
-  _periodsDescriptions: []
+  _periodsDescriptions:
+  - period: 0
+    description: After a time paradox, this sword now help <b>prehistoric</b> tribes
+      to exterminate mammoths.
+  - period: 1
+    description: After a time paradox, this sword was taken by a greek tribe where
+      it's said to be forged by <b>Antiquity</b>'s divinities.
+  - period: 2
+    description: This sword was wielded by <b>knights</b> during tournament in the
+      Middle Ages.
+  - period: 3
+    description: After a time paradox, this sword is now used by <b>nobles</b> during
+      ceremonies.
   _accessoryName: 

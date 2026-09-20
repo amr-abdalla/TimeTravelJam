@@ -12,11 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0c520d199a22744b6be072b08aa160, type: 3}
   m_Name: Item_Prefab_Laurel
   m_EditorClassIdentifier: 
-  _itemName: 
-  _period: 0
-  _itemValue: 0
+  _itemName: Winner's Crown
+  _period: 1
+  _itemValue: 50
   _cannotGoInStorage: 0
-  _inStoragePrefab: {fileID: 0}
+  _inStoragePrefab: {fileID: 7679824704720161941, guid: 57712d8d11422884f9cd07fd2bcd8c44, type: 3}
   _defaultDescription: Use this item on a traveler going on the right time period
-  _periodsDescriptions: []
+  _periodsDescriptions:
+  - period: 0
+    description: After a time paradox, this laural crown is now found during <b>Prehistory</b>.
+  - period: 1
+    description: This laurel crown was traditionnaly used during <b>Antiquity</b>
+      as a symbol of triumph to revard sport championship winners.
+  - period: 2
+    description: After a time paradox, this laural crown is now commonly worn by
+      <b>knights</b>.
+  - period: 3
+    description: After a time paradox, this laural crown is now commonly worn by
+      <b>nobles</b>.
   _onCharacterPrefab: {fileID: 0}

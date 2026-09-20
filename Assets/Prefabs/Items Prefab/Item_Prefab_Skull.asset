@@ -12,11 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0c520d199a22744b6be072b08aa160, type: 3}
   m_Name: Item_Prefab_Skull
   m_EditorClassIdentifier: 
-  _itemName: 
+  _itemName: Dino Skull
   _period: 0
-  _itemValue: 0
+  _itemValue: 50
   _cannotGoInStorage: 0
   _inStoragePrefab: {fileID: 0}
   _defaultDescription: Use this item on a traveler going on the right time period
-  _periodsDescriptions: []
+  _periodsDescriptions:
+  - period: 0
+    description: This club was usually worn during <b>Prehistory</b>.
+  - period: 1
+    description: After a time paradox, this skull is now commonly used during <b>Antiquity</b>.
+  - period: 2
+    description: After a time paradox, this skull is now commonly worn by <b>knights</b>.
+  - period: 3
+    description: After a time paradox, this skull is now commonly worn by <b>nobles</b>.
   _onCharacterPrefab: {fileID: 0}
