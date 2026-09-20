@@ -31,4 +31,4 @@ MonoBehaviour:
   - period: 3
     description: This funny hat was traditionally worn by jesters during their performances
       before <b>nobles</b>.
-  _onCharacterPrefab: {fileID: 0}
+  _onCharacterPrefab: {fileID: 5879114897435006099, guid: 45826024b2e3b0c45a8b8ea803841d16, type: 3}

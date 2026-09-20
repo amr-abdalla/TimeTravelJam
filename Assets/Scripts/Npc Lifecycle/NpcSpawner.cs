@@ -26,7 +26,7 @@ public class NpcSpawner : MonoBehaviour
 	{
 		GameObject npc = Instantiate(NpcPrefab, null);
 		// some cool vfx here
-		npc.SetActive(false);
+		//npc.SetActive(false);
 
 		npc.GetComponent<NpcData>().Randomize();
 		Interactable[] interactables = npc.GetComponentsInChildren<Interactable>().Where(c => c.gameObject != npc.gameObject).ToArray();
@@ -35,7 +35,7 @@ public class NpcSpawner : MonoBehaviour
 			interactable.InteractionEnabled = false;
 		}
 
-		npc.SetActive(true);
+		//npc.SetActive(true);
 		return npc;
 	}
 }

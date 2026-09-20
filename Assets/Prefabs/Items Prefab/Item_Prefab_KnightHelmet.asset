@@ -30,4 +30,4 @@ MonoBehaviour:
   - period: 3
     description: After a time paradox, <b>nobles</b> now ask their servants to wear
       this helmet when they can't stand to see their face.
-  _onCharacterPrefab: {fileID: 0}
+  _onCharacterPrefab: {fileID: 460405394065909980, guid: 9da8e4bd92d59ac47baffd75ee8a6792, type: 3}

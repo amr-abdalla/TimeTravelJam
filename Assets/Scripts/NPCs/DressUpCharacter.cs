@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class DressUpCharacter : MonoBehaviour
@@ -20,7 +21,7 @@ public class DressUpCharacter : MonoBehaviour
 	[SerializeField] private Transform _hatParent;
 	[SerializeField] private SkinnedMeshRenderer _clothRenderer;
 
-	private void Start()
+	private void OnEnable()
 	{
 		_npcHat = null;
 		_hatObject = null;
@@ -41,10 +42,10 @@ public class DressUpCharacter : MonoBehaviour
 		if (item is TimeHat) return _npcHat != null;
 		if (item is TimeCloth) return _npcCloth != null;
 
-		//if (item is TimeAccessory timeAccessory)
-		//{
-		//	return _accessories.Any(accessory => accessory.gameObject.activeSelf && accessory.AssociatedItem.AccessoryName == timeAccessory.AccessoryName);
-		//}
+		if (item is TimeAccessory timeAccessory)
+		{
+			return _accessories.Any(accessory => accessory.gameObject.activeSelf && accessory.AssociatedItem.ItemName == timeAccessory.ItemName);
+		}
 
 		return false;
 	}
@@ -87,7 +88,7 @@ public class DressUpCharacter : MonoBehaviour
 			Debug.Log("Wearing an accessory");
 			foreach (AccessoryInteractable accessory in _accessories)
 			{
-				if (crntItem.AccessoryName.Equals(accessory.AssociatedItem.AccessoryName))
+				if (crntItem.ItemName.Equals(accessory.AssociatedItem.ItemName))
 					accessory.gameObject.SetActive(true);
 			}
 		}

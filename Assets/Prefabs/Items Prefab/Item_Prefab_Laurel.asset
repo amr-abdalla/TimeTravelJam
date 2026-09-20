@@ -30,4 +30,4 @@ MonoBehaviour:
   - period: 3
     description: After a time paradox, this laural crown is now commonly worn by
       <b>nobles</b>.
-  _onCharacterPrefab: {fileID: 0}
+  _onCharacterPrefab: {fileID: 3575925561170448559, guid: eb04d80e9537f6540b81e7fcc74f0f3b, type: 3}
