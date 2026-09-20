@@ -20,10 +20,9 @@ MonoBehaviour:
   _defaultDescription: Use this item on a traveler going on the right time period
   _periodsDescriptions:
   - period: 0
-    description: After a time paradox, this costume is now found during <b>Prehistory</b>.
+    description: After a time paradox, this costume is now worn during <b>Prehistory</b>.
   - period: 1
-    description: After a time paradox, this jester costume is a perfect tapestry
-      texture.
+    description: After a time paradox, this costume is now worn during <b>Antiquity</b>.
   - period: 2
     description: After a time paradoxe, this costume is now worn by <b>knights</b>.
   - period: 3
