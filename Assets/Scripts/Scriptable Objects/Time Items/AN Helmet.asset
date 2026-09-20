@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d0c520d199a22744b6be072b08aa160, type: 3}
-  m_Name: Time Hat
+  m_Name: AN Helmet
   m_EditorClassIdentifier: 
-  _itemName: 
-  _period: 0
+  _itemName: Centurion Helmet
+  _period: 1
   _itemValue: 0
   _cannotGoInStorage: 0
   _inStoragePrefab: {fileID: 0}
