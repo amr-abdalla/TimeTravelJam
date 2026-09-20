@@ -20,4 +20,5 @@ MonoBehaviour:
   _defaultDescription: Use this item on a traveler going on the right time period
   _periodsDescriptions: []
   _clothType: 0
-  _clothMaterial: {fileID: 2100000, guid: 678caa706320bf34e8df0d31ccb2f6a3, type: 2}
+  _clothMaterial_M: {fileID: 2100000, guid: 678caa706320bf34e8df0d31ccb2f6a3, type: 2}
+  _clothMaterial_F: {fileID: 2100000, guid: 678caa706320bf34e8df0d31ccb2f6a3, type: 2}

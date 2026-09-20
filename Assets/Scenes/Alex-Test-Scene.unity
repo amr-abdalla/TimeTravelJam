@@ -1994,6 +1994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964f7d61997e21b48bee8e590af4a677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gender: 1
   _hatParent: {fileID: 5901452233469052047}
   _clothRenderer: {fileID: 4670671611128926942}
 --- !u!4 &5901452233469052047

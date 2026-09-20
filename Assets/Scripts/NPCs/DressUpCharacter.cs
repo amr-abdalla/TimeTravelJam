@@ -11,6 +11,12 @@ public class DressUpCharacter : MonoBehaviour
 	private GameObject _hatObject;
 	private StorageManager _storage;
 
+	enum Gender
+	{
+		Male,
+		Female
+	}
+	[SerializeField] private Gender _gender;
 	[SerializeField] private Transform _hatParent;
 	[SerializeField] private SkinnedMeshRenderer _clothRenderer;
 
@@ -59,7 +65,8 @@ public class DressUpCharacter : MonoBehaviour
 			_npcCloth = (TimeCloth) item;
 			_clothRenderer.gameObject.SetActive(true);
 			_clothRenderer.enabled = true;
-			_clothRenderer.sharedMaterial = _npcCloth.ClothMaterial;
+
+			_clothRenderer.sharedMaterial = _gender == Gender.Male ? _npcCloth.ClothMaterial_M : _npcCloth.ClothMaterial_F;
 		}
 	}
 
