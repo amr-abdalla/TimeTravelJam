@@ -23,6 +23,7 @@ public class StabilityManager : MonoBehaviour
 			{
 				Debug.Log("Game Over");
 				_gameOverEvent.Invoke();
+				StopAllCoroutines();
 			}
 		}
 	}
@@ -40,12 +41,12 @@ public class StabilityManager : MonoBehaviour
 			Destroy(Instance);
 		}
 		Instance = this;
+
+		_timeAnomalies = new Dictionary<TimeItem, TimePeriod>();
 	}
 
 	private void Start()
 	{
-		_timeAnomalies = new Dictionary<TimeItem, TimePeriod>();
-
 		if (_adjustements == null) Debug.LogError("Gameplay adjustements screen is Missing on Stabiliy Manager");
 
 		_currentStability = _adjustements.MaxStability;
