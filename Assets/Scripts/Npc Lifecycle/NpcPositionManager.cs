@@ -67,18 +67,24 @@ public class NpcPositionManager : MonoBehaviour
 			return;
 
 		int numberOfObjects = npcs.Count;
+
 		for (int i = 0; i < numberOfObjects; i++)
 		{
 			GameObject obj = npcs[i];
 			if (obj == null)
 				continue;
 
-			float angle = (i * 360f / numberOfObjects + currentOffset) * Mathf.Deg2Rad;
+			float angle = (
+				i * 360f / numberOfObjects + currentOffset
+			) * Mathf.Deg2Rad;
 
-			float x = Mathf.Cos(angle) * radius;
-			float z = Mathf.Sin(angle) * radius;
+			Vector3 localPosition = new Vector3(
+				Mathf.Cos(angle) * radius,
+				0f,
+				Mathf.Sin(angle) * radius
+			);
 
-			obj.transform.position = new Vector3(x, 0, z) + transform.position;
+			obj.transform.position = transform.TransformPoint(localPosition);
 		}
 	}
 
@@ -105,7 +111,7 @@ public class NpcPositionManager : MonoBehaviour
 	private void OnDeselectNPC(GameObject npc)
 	{
 		npc.GetComponent<Interactable>().InteractionEnabled = true;
-		npc.transform.rotation = Quaternion.Euler(0, 0, 0);
+		npc.transform.rotation = Quaternion.Euler(0, 180, 0);
 		npc.GetComponent<InteractableNPC>().InteractionEnabled = true;
 		npc.GetComponent<Collider>().enabled = true;
 
