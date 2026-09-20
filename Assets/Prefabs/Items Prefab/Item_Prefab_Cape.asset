@@ -12,13 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae9b70a46f18abd4aabe95647f5b7602, type: 3}
   m_Name: Item_Prefab_Cape
   m_EditorClassIdentifier: 
-  _itemName: 
+  _itemName: Cape
   _period: 0
-  _itemValue: 0
+  _itemValue: 100
   _cannotGoInStorage: 0
-  _inStoragePrefab: {fileID: 0}
+  _inStoragePrefab: {fileID: 5057020493153076344, guid: b970c464d0616dd4cb0cd3493f7d9e7f, type: 3}
   _defaultDescription: Use this item on a traveler going on the right time period
-  _periodsDescriptions: []
+  _periodsDescriptions:
+  - period: 0
+    description: This cape was usually worn by <b>prehistoric</b> people to survive
+      the cold of Ice Age
+  - period: 1
+    description: After a time paradox, this cape became a current bedside rug during
+      <b>Antiquity</b>.
+  - period: 2
+    description: After a time paradox, this cape is now commonly worn by <b>knights</b>.
+  - period: 3
+    description: After a time paradox, this cape is now worn by <b>nobles</b>, especially
+      old ladies, as a sign of wealth.
   _clothType: 0
   _clothMaterial_M: {fileID: 0}
   _clothMaterial_F: {fileID: 0}
