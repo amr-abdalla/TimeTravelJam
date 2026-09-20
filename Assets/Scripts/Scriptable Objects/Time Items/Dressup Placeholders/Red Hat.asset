@@ -15,6 +15,7 @@ MonoBehaviour:
   _itemName: 
   _period: 0
   _itemValue: 0
+  _cannotGoInStorage: 0
   _inStoragePrefab: {fileID: 3262508874718194918, guid: 4e1c1a29307196647986a188839590fa, type: 3}
   _defaultDescription: Use this item on a traveler going on the right time period
   _periodsDescriptions:

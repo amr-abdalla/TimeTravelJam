@@ -4,6 +4,7 @@ public class TimeItem : ScriptableObject
 {
     public string ItemName { get { return _itemName; } }
     public TimePeriod Period { get { return _period; } }
+    public bool CannotGoInStorage { get { return _cannotGoInStorage; } }
     public GameObject InStoragePrefab { get { return _inStoragePrefab; } }
 
     [Tooltip("Display name of the item if needed")]
@@ -16,6 +17,9 @@ public class TimeItem : ScriptableObject
     [SerializeField] protected int _itemValue;
 
     [Space(5)]
+
+    [Tooltip("Wether or not the item can go in the storage or it disappear completely when clicked")]
+    [SerializeField] protected bool _cannotGoInStorage = false;
 
     [Tooltip("Prefab of the object when it's stored")]
     [SerializeField] protected GameObject _inStoragePrefab;

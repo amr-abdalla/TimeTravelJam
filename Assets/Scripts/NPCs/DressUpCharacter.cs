@@ -65,7 +65,10 @@ public class DressUpCharacter : MonoBehaviour
 
 	public void RemoveHat()
 	{
-		bool removed = _storage.AddItem(_npcHat.InStoragePrefab);
+		bool removed = true;
+		if (!_npcHat.CannotGoInStorage)
+			removed = _storage.AddItem(_npcHat.InStoragePrefab);
+
 		if (!removed) return;
 
 		if (_hatObject != null)
@@ -77,7 +80,9 @@ public class DressUpCharacter : MonoBehaviour
 
 	public void RemoveCloth()
 	{
-		bool removed = _storage.AddItem(_npcCloth.InStoragePrefab);
+		bool removed = true;
+		if (!_npcCloth.CannotGoInStorage)
+			removed = _storage.AddItem(_npcCloth.InStoragePrefab);
 		if (!removed) return;
 
 		_clothRenderer.gameObject.SetActive(false);
